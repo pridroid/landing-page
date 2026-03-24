@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Excellence Workshop 2026 | Business mastery</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue: #1A6BFF;
+  --blue-light: #4D8FFF;
+  --black: #0F172A;
+  --dark: #F8FAFF;
+  --dark2: #EEF3FF;
+  --white: #FFFFFF;
+  --off-white: #F1F5F9;
+  --gray: #64748B;
+  --light-gray: #334155;
+  --border: #E2E8F0;
+  --text: #0F172A;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--white);
+  color: var(--text);
+  overflow-x: hidden;
+  padding-bottom: 80px;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--black);
+  border-bottom: 1px solid #1E293B;
+  padding: 16px 24px 12px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(22px, 5vw, 38px);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  line-height: 1.05;
+  display: block;
+}
+.header-dateline {
+  margin-top: 6px;
+  font-size: clamp(10px, 1.8vw, 13px);
+  color: #94A3B8;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.header-dateline .pipe { margin: 0 8px; color: #334155; }
+.header-cta {
+  display: inline-block;
+  margin-top: 10px;
+  border: 1.5px solid var(--blue);
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 8px 28px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 40px;
+  transition: background 0.15s, color 0.15s;
+}
+.header-cta:hover { background: var(--blue); color: #fff; }
+
+/* ── HERO SECTION — two-column VSL + WARNING ── */
+.hero-section {
+  width: 100%;
+  background: #ffffff;
+  padding: 80px 20px;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid var(--border);
+}
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
+.vsl-frame {
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+}
+
+.vsl-frame iframe {
+  width: 100%;
+  height: 100%;
+}
+.vsl-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(0,0,0,0.55);
+  z-index: 2;
+}
+.vsl-thumbnail { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80') center/cover no-repeat; opacity: 0.3; z-index: 1; }
+.vsl-play { width: 80px; height: 80px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; transition: transform 0.15s, background 0.15s; box-shadow: 0 0 0 20px rgba(26,107,255,0.12); position: relative; z-index: 1; }
+.vsl-play:hover { background: var(--blue-light); transform: scale(1.08); }
+.vsl-play svg { width: 32px; margin-left: 5px; }
+.vsl-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.yt-btn {
+  margin-top: 18px;
+}
+.vsl-label { font-size: 12px; color: #CBD5E1; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; position: relative; z-index: 1; }
+.unmute-bar { position: absolute; top: 14px; left: 16px; background: rgba(0,0,0,0.8); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; padding: 6px 18px; border-radius: 4px; z-index: 3; text-transform: uppercase; }
+
+/* ── WARNING right column ── */
+.warning-block {
+  text-align: left;
+  background: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+.warn-word {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(56px, 7vw, 96px);
+  font-weight: 800;
+  color: var(--blue);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  display: block;
+  margin-bottom: 20px;
+}
+.warn-headline {
+  font-size: clamp(22px, 2.8vw, 34px);
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.warn-headline .blue { color: var(--blue); }
+.warn-italic {
+  font-size: clamp(17px, 2vw, 22px);
+  font-style: italic;
+  font-weight: 700;
+  color: var(--gray);
+  margin-bottom: 36px;
+  line-height: 1.4;
+}
+.warn-read-btn {
+  display: inline-block;
+  border: 2px solid var(--text);
+  color: var(--text);
+  font-size: clamp(12px, 1.4vw, 15px);
+  font-weight: 700;
+  padding: 16px 48px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 40px;
+  transition: background 0.15s, color 0.15s;
+}
+.warn-read-btn:hover { background: var(--text); color: #fff; }
+
+/* ── HERO BOTTOM ── */
+.hero-bottom { background: var(--dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.hero-bottom-inner { max-width: 900px; margin: 0 auto; padding: 80px 40px; text-align: center; }
+.hb-small { font-size: clamp(16px, 1.8vw, 20px); color: var(--gray); margin-bottom: 14px; font-weight: 600; }
+.hb-big { font-family: 'Syne', sans-serif; font-size: clamp(42px, 7vw, 80px); font-weight: 800; line-height: 1.05; letter-spacing: -0.025em; color: var(--text); }
+.hb-big .blue { color: var(--blue); }
+.hb-image { width: 100%; max-width: 700px; aspect-ratio: 16/9; background: #e2e8f0; border: 1px solid var(--border); margin: 36px auto 0; overflow: hidden; display: block; border-radius: 4px; }
+.hb-image img { width: 100%; height: 100%; object-fit: cover; }
+
+@media(max-width: 860px) {
+  .hero-inner { grid-template-columns: 1.2fr 0.8fr }
+  .hero-section { padding: 40px 20px; }
+  .warning-block { text-align: center; }
+  .warn-word { font-size: clamp(56px, 16vw, 80px); }
+}
+
+/* ── SHARED ── */
+.btn { display: inline-block; background: var(--blue); color: #fff; font-size: 13px; font-weight: 700; padding: 16px 32px; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.15s, transform 0.1s; border: none; cursor: pointer; border-radius: 4px; }
+.btn:hover { background: var(--blue-light); transform: translateY(-1px); }
+.btn-outline { display: inline-block; background: transparent; color: var(--text); font-size: 11px; font-weight: 700; padding: 12px 32px; text-decoration: none; letter-spacing: 0.18em; text-transform: uppercase; border: 1.5px solid var(--text); transition: background 0.15s, color 0.15s; }
+.btn-outline:hover { background: var(--text); color: #fff; }
+
+.divider { height: 1px; background: var(--border); }
+.sec { padding: 80px 40px; }
+.sec-inner { max-width: 1100px; margin: 0 auto; }
+.bg-dark { background: var(--dark); }
+.bg-dark2 { background: var(--dark2); }
+.cta-row { text-align: center; margin-top: 44px; }
+
+.sec-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.sec-label::before { content: ''; display: block; width: 22px; height: 2px; background: var(--blue); flex-shrink: 0; }
+.sec-label.center { justify-content: center; }
+.sec-label.center::before { display: none; }
+.sec-title { font-family: 'Syne', sans-serif; font-size: clamp(24px, 3.5vw, 40px); font-weight: 800; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 16px; color: var(--text); }
+.sec-title .blue { color: var(--blue); }
+.sec-desc { font-size: 15px; line-height: 1.7; color: var(--gray); max-width: 600px; }
+
+/* ── TESTIMONIALS ── */
+.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); margin-top: 48px; border: 1px solid var(--border); }
+.testi-card { background: var(--white); padding: 30px; display: flex; flex-direction: column; gap: 16px; transition: background 0.15s; }
+.testi-card:hover { background: #F8FAFF; }
+.testi-quote { font-size: 13px; line-height: 1.78; color: var(--light-gray); font-style: italic; flex: 1; }
+.testi-bottom { display: flex; align-items: center; gap: 12px; }
+.testi-av { width: 36px; height: 36px; border-radius: 50%; background: rgba(26,107,255,0.08); border: 1px solid rgba(26,107,255,0.25); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--blue); flex-shrink: 0; }
+.testi-name { font-size: 13px; font-weight: 700; color: var(--text); }
+.testi-role { font-size: 11px; color: var(--gray); margin-top: 2px; }
+
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); margin-top: 1px; border: 1px solid var(--border); border-top: none; }
+.stat-item { background: var(--dark2); padding: 28px 20px; text-align: center; }
+.stat-num { font-family: 'Syne', sans-serif; font-size: 38px; font-weight: 800; color: var(--text); letter-spacing: -0.03em; line-height: 1; }
+.stat-num .blue { color: var(--blue); }
+.stat-lbl { font-size: 12px; color: var(--gray); margin-top: 8px; line-height: 1.5; }
+
+/* ── TRANSFORMATIONS ── */
+.transforms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+.t-card { background: var(--white); border: 1px solid var(--border); padding: 34px 26px; position: relative; display: flex; flex-direction: column; gap: 14px; transition: border-color 0.2s, box-shadow 0.2s; }
+.t-card:hover { border-color: var(--blue); box-shadow: 0 4px 20px rgba(26,107,255,0.08); }
+.t-ghost { position: absolute; top: 18px; right: 22px; font-family: 'Syne', sans-serif; font-size: 68px; font-weight: 800; color: rgba(15,23,42,0.04); line-height: 1; letter-spacing: -0.04em; user-select: none; }
+.t-badge { display: inline-block; background: rgba(26,107,255,0.08); border: 1px solid rgba(26,107,255,0.18); color: var(--blue); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; align-self: flex-start; }
+.t-icon { width: 46px; height: 46px; background: rgba(26,107,255,0.07); border: 1px solid rgba(26,107,255,0.18); border-radius: 2px; display: flex; align-items: center; justify-content: center; }
+.t-icon svg { width: 20px; height: 20px; color: var(--blue); }
+.t-title { font-size: 15px; font-weight: 700; line-height: 1.3; color: var(--text); }
+.t-desc { font-size: 13px; line-height: 1.7; color: var(--gray); }
+
+/* ── FRAMEWORK ── dark band */
+.fw-section { background: var(--black); }
+.fw-section .sec-label { color: #60A5FA; }
+.fw-section .sec-label::before { background: #60A5FA; }
+.fw-section .sec-title { color: #F8FAFC; }
+.fw-section .sec-title .blue { color: #60A5FA; }
+.fw-section .sec-desc { color: #94A3B8; }
+.fw-section h3 { color: #F8FAFC; }
+.fw-section p { color: #94A3B8; }
+
+.mult-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: #1E293B; margin-top: 48px; border: 1px solid #1E293B; }
+.mult-card { background: #0F172A; padding: 30px 20px; text-align: center; }
+.mult-x { font-family: 'Syne', sans-serif; font-size: 46px; font-weight: 800; color: #60A5FA; letter-spacing: -0.04em; line-height: 1; }
+.mult-title { font-size: 13px; font-weight: 700; margin: 10px 0 8px; color: #F8FAFC; }
+.mult-desc { font-size: 12px; color: #94A3B8; line-height: 1.6; }
+.mult-res { margin-top: 12px; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #60A5FA; }
+.formula-bar { background: var(--blue); padding: 22px 40px; text-align: center; margin-top: 1px; }
+.formula-bar .eq { font-family: 'Syne', sans-serif; font-size: clamp(20px, 3.5vw, 38px); font-weight: 800; letter-spacing: -0.02em; color: #fff; }
+
+.fw-list { margin-top: 36px; display: flex; flex-direction: column; gap: 1px; background: #1E293B; border: 1px solid #1E293B; }
+.fw-item { display: grid; grid-template-columns: 68px 1fr; align-items: stretch; gap: 1px; background: #1E293B; }
+.fw-num { background: #0F172A; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: #60A5FA; }
+.fw-body { background: #111827; padding: 24px 26px; display: flex; flex-direction: column; gap: 5px; }
+.fw-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #60A5FA; }
+.fw-title { font-size: 14px; font-weight: 700; color: #F8FAFC; }
+.fw-desc { font-size: 13px; color: #94A3B8; line-height: 1.65; }
+
+/* ── CALCULATOR ── */
+.calc-wrap { background: var(--dark); border: 1px solid var(--border); padding: 48px; margin-top: 48px; border-radius: 4px; }
+.calc-title { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; color: var(--text); }
+.calc-sub { font-size: 14px; color: var(--gray); margin-bottom: 32px; }
+.calc-body { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.calc-inputs { display: flex; flex-direction: column; gap: 22px; }
+.c-row { display: flex; flex-direction: column; gap: 8px; }
+.c-lbl { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); }
+.c-field { display: flex; align-items: center; background: var(--white); border: 1px solid var(--border); }
+.c-pre { padding: 12px 14px; font-size: 14px; font-weight: 700; color: var(--blue); border-right: 1px solid var(--border); background: rgba(26,107,255,0.05); }
+.c-field input { flex: 1; background: transparent; border: none; outline: none; padding: 12px 16px; font-size: 16px; font-weight: 700; color: var(--text); font-family: 'Inter', sans-serif; }
+.c-field input::-webkit-inner-spin-button { -webkit-appearance: none; }
+.sl-row { display: flex; flex-direction: column; gap: 10px; }
+.sl-top { display: flex; justify-content: space-between; align-items: center; }
+.sl-lbl { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); }
+.sl-val { font-size: 14px; font-weight: 700; color: var(--blue); }
+input[type=range] { -webkit-appearance: none; width: 100%; height: 3px; background: var(--border); outline: none; border-radius: 2px; cursor: pointer; }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: var(--blue); border: 2px solid #fff; cursor: pointer; }
+.calc-result { border: 1px solid var(--border); padding: 36px; text-align: center; background: var(--white); display: flex; flex-direction: column; gap: 18px; border-radius: 4px; }
+.cr-lbl { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-bottom: 4px; }
+.cr-amount { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; color: var(--text); letter-spacing: -0.02em; }
+.cr-amount.big { font-size: 42px; color: var(--blue); }
+.cr-hr { height: 1px; background: var(--border); }
+.cr-arrow { font-size: 24px; color: var(--blue); }
+.cr-note { font-size: 11px; color: var(--gray); line-height: 1.6; }
+
+/* ── BONUSES ── */
+.bonuses-list { margin-top: 48px; display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.b-row { display: grid; grid-template-columns: 54px 1fr auto; align-items: center; background: var(--white); gap: 1px; transition: background 0.15s; }
+.b-row:hover { background: #F8FAFF; }
+.b-idx { background: var(--dark2); height: 100%; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 800; color: var(--blue); border-right: 1px solid var(--border); padding: 24px 0; }
+.b-body { padding: 22px 24px; }
+.b-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
+.b-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+.b-desc { font-size: 13px; color: var(--gray); line-height: 1.6; }
+.b-val { padding: 22px; border-left: 1px solid var(--border); text-align: right; min-width: 100px; }
+.bv-lbl { font-size: 10px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.08em; }
+.bv-num { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; color: var(--text); margin-top: 4px; }
+.bonuses-total { background: var(--blue); padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; }
+.bt-lbl { font-size: 13px; font-weight: 700; color: #fff; }
+.bt-amt { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: #fff; }
+
+/* ── GUARANTEE ── */
+.guar-section-bg {
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+}
+.guar-section-bg::before {
+  content: '';
+  position: absolute;
+  top: -200px; left: 50%;
+  transform: translateX(-50%);
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(212,175,55,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.guar-section-bg .sec-label { color: #D4AF37; }
+.guar-section-bg .sec-label::before { background: #D4AF37; }
+.guar-section-bg .sec-title { color: #FFFFFF; }
+.guar-section-bg .sec-title .blue { color: #D4AF37; }
+
+.guar-wrap {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  align-items: center;
+  gap: 60px;
+  margin-top: 48px;
+  background: linear-gradient(135deg, #161616 0%, #111111 100%);
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: 4px;
+  padding: 56px 52px;
+  position: relative;
+  overflow: hidden;
+}
+.guar-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+}
+
+.gold-badge-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.gold-badge-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.gold-badge { width: 180px; height: 180px; position: relative; z-index: 1; }
+.gold-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: lighten;
+  filter: drop-shadow(0 8px 32px rgba(212,175,55,0.5)) drop-shadow(0 2px 8px rgba(212,175,55,0.3));
+}
+
+.guar-body { flex: 1; }
+.guar-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.guar-title span { color: #D4AF37; }
+.guar-divider {
+  width: 48px; height: 2px;
+  background: linear-gradient(90deg, #D4AF37, transparent);
+  margin-bottom: 18px;
+}
+.guar-text { font-size: 15px; line-height: 1.85; color: #888888; }
+.guar-text strong { color: #cccccc; font-weight: 600; }
+.guar-text p { margin-bottom: 14px; }
+
+.guar-btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #D4AF37 0%, #B8960C 100%);
+  color: #000;
+  border: none;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 16px 36px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: opacity 0.15s, transform 0.15s;
+  margin-top: 10px;
+  box-shadow: 0 4px 24px rgba(212,175,55,0.3);
+}
+.guar-btn-gold:hover { opacity: 0.9; transform: translateY(-1px); color: #000; }
+.guar-btn-gold::after { content: '→'; font-size: 16px; }
+
+.guar-badges {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.guar-badge-pill {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #888;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.guar-badge-pill::before {
+  content: '✓';
+  width: 18px; height: 18px;
+  background: rgba(212,175,55,0.12);
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #D4AF37;
+  flex-shrink: 0;
+}
+
+@media(max-width: 720px) {
+  .guar-wrap { grid-template-columns: 1fr; padding: 36px 24px; text-align: center; gap: 32px; }
+  .gold-badge { width: 140px; height: 140px; }
+  .guar-divider { margin: 0 auto 18px; }
+  .guar-badges { justify-content: center; }
+}
+
+/* ── LETTER ── */
+.letter-outer { background: var(--off-white); color: var(--text); padding: 80px 40px; }
+.letter-inner { max-width: 700px; margin: 0 auto; }
+.l-label { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.l-label::before { content: ''; display: block; width: 22px; height: 2px; background: var(--blue); }
+.l-title { font-family: 'Syne', sans-serif; font-size: clamp(22px, 3.5vw, 36px); font-weight: 800; letter-spacing: -0.025em; margin-bottom: 28px; color: var(--text); line-height: 1.15; }
+.l-paper { background: var(--white); border: 1px solid var(--border); padding: 48px; box-shadow: 0 2px 20px rgba(0,0,0,0.05); }
+.l-greet { font-size: 15px; font-weight: 600; margin-bottom: 22px; color: var(--text); }
+.l-body { font-size: 15px; line-height: 1.85; color: #475569; }
+.l-body p { margin-bottom: 18px; }
+.l-sign { margin-top: 30px; }
+.l-sign-from { font-size: 13px; color: var(--gray); margin-bottom: 4px; }
+.l-sign-name { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--text); }
+.l-sign-title { font-size: 12px; color: var(--gray); margin-top: 4px; }
+
+/* ── FAQ ── */
+.faq-list { max-width: 760px; margin: 48px auto 0; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 0; background: none; border: none; color: var(--text); font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; text-align: left; gap: 16px; transition: color 0.15s; }
+.faq-q:hover { color: var(--blue); }
+.faq-icon { width: 26px; height: 26px; flex-shrink: 0; border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--blue); transition: background 0.15s, transform 0.2s; }
+.faq-item.open .faq-icon { background: var(--blue); color: #fff; transform: rotate(45deg); }
+.faq-a { font-size: 14px; line-height: 1.75; color: var(--gray); max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s; }
+.faq-item.open .faq-a { max-height: 400px; padding-bottom: 20px; }
+
+/* ── STICKY BAR ── */
+.sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--black); border-top: 1px solid #1E293B; padding: 13px 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.sb-left { display: flex; flex-direction: column; gap: 2px; }
+.sb-pr-row { display: flex; align-items: baseline; gap: 10px; }
+.sb-price { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; color: var(--blue); letter-spacing: -0.02em; }
+.sb-strike { font-size: 13px; color: #64748B; text-decoration: line-through; }
+.sb-note { font-size: 11px; color: #64748B; }
+.sb-right { display: flex; align-items: center; gap: 20px; }
+.sb-timer-lbl { font-size: 10px; color: #64748B; text-transform: uppercase; letter-spacing: 0.1em; }
+.sb-timer-blocks { display: flex; align-items: center; gap: 4px; margin-top: 4px; }
+.t-blk { background: #1E293B; border: 1px solid #334155; padding: 4px 8px; font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 800; min-width: 32px; text-align: center; color: #fff; }
+.t-sep { color: var(--blue); font-weight: 700; }
+.sb-cta { background: var(--blue); color: #fff; font-size: 12px; font-weight: 700; padding: 13px 24px; text-decoration: none; letter-spacing: 0.07em; text-transform: uppercase; white-space: nowrap; transition: background 0.15s; border-radius: 4px; }
+.sb-cta:hover { background: var(--blue-light); }
+
+/* ── RESPONSIVE ── */
+@media(max-width: 900px) {
+  .testi-grid { grid-template-columns: 1fr 1fr; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .transforms-grid { grid-template-columns: 1fr; gap: 1px; }
+  .mult-strip { grid-template-columns: repeat(2, 1fr); }
+  .calc-body { grid-template-columns: 1fr; }
+  .hero-bottom-inner { padding: 44px 24px; }
+  .sec { padding: 60px 20px; }
+  .letter-outer { padding: 60px 24px; }
+}
+@media(max-width: 640px) {
+  .testi-grid { grid-template-columns: 1fr; }
+  .mult-strip { grid-template-columns: 1fr; }
+  .b-val { display: none; }
+  .b-row { grid-template-columns: 46px 1fr; }
+  .calc-wrap { padding: 28px 20px; }
+  .l-paper { padding: 28px 20px; }
+  .sticky-bar { flex-wrap: wrap; justify-content: center; padding: 12px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <span class="header-logo">Business<br>Excellence Workshop</span>
+  <div class="header-dateline">
+    28 March 2026
+    <span class="pipe">|</span>
+    Zoom · Online
+  </div>
+  <a href="https://ai.stcs.in/register" class="header-cta">Register Now</a>
+</header>
+
+<!-- HERO — two column: VSL left, WARNING right -->
+<div class="hero-section">
+  <div class="hero-inner">
+      
+    <!-- VSL -->
+    <div class="vsl-col">
+      <div class="vsl-frame">
+        <iframe 
+          src="https://www.youtube.com/embed/h5S2dBFLQHQ?autoplay=1&mute=1&rel=0" 
+          frameborder="0" 
+          allow="autoplay; encrypted-media" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    
+      <a href="https://www.youtube.com/watch?v=h5S2dBFLQHQ" target="_blank" class="btn-outline yt-btn">
+        Watch on YouTube →
+      </a>
+    </div>
+    
+    
+    <!-- WARNING -->
+    <div class="warning-block">
+      <span class="warn-word">WARNING:</span>
+      <p class="warn-headline">
+        Your Competitors Are Already <span class="blue">Building Systems</span> That Run Without Them.
+      </p>
+      <p class="warn-italic">The Entrepreneurs Who Move This Month Will Own The Next 3 Years.</p>
+      <a href="https://ai.stcs.in/register" class="warn-read-btn">READ CAREFULLY.</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO BOTTOM -->
+<div class="hero-bottom">
+  <div class="hero-bottom-inner">
+    <p class="hb-small">While Everyone Else Is Still Talking About It...</p>
+    <h2 class="hb-big">We're Making It Happen.<br><span class="blue">Live. In 3 Hours.</span></h2>
+    <div class="hb-image">
+      <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80" alt="Workshop audience">
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- TESTIMONIALS -->
+<div class="bg-dark">
+<div class="sec">
+<div class="sec-inner">
+  <div class="sec-label">Results From Past Attendees</div>
+  <h2 class="sec-title">Real People.<br><span class="blue">Real Transformations.</span></h2>
+  <p class="sec-desc">Across dozens of businesses — consulting, SaaS, e-commerce, services — attendees who implemented what we taught saw the same pattern every time.</p>
+
+  <div class="testi-grid">
+    <div class="testi-card">
+      <p class="testi-quote">"After implementing the AI systems from this workshop, we eliminated 35+ manual processes. Lead response time dropped from 4 hours to under 3 minutes — fully automated."</p>
+      <div class="testi-bottom">
+        <div class="testi-av">R</div>
+        <div><div class="testi-name">Rajesh Mehta</div><div class="testi-role">Founder, TechScale India</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <p class="testi-quote">"I came in skeptical. I left with a working AI system handling 60% of our customer queries without human intervention. Revenue is up 3x in 4 months."</p>
+      <div class="testi-bottom">
+        <div class="testi-av">P</div>
+        <div><div class="testi-name">Priya Sharma</div><div class="testi-role">CEO, GrowthEdge Consulting</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <p class="testi-quote">"We doubled our leads in 6 weeks, improved conversions by 38%, and our cost per acquisition dropped by over 60%. The 16X framework is not theory — it's a system."</p>
+      <div class="testi-bottom">
+        <div class="testi-av">A</div>
+        <div><div class="testi-name">Arjun Krishnan</div><div class="testi-role">Director, NexGen SaaS</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <p class="testi-quote">"We built a complete AI-powered onboarding system in 2 days. That single system has generated ₹40L in upsell revenue we would have completely missed."</p>
+      <div class="testi-bottom">
+        <div class="testi-av">N</div>
+        <div><div class="testi-name">Nisha Patel</div><div class="testi-role">Co-founder, EduScale</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <p class="testi-quote">"I have an AI team that runs follow-ups, qualifies leads, and books meetings while I sleep. My human team is now focused only on closing. Revenue is up significantly."</p>
+      <div class="testi-bottom">
+        <div class="testi-av">V</div>
+        <div><div class="testi-name">Vikram Desai</div><div class="testi-role">Managing Partner, VD Capital</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <p class="testi-quote">"We reduced team overhead by 40% while growing revenue 180% in the same quarter. The AI systems we built are now the backbone of our entire operation."</p>
+      <div class="testi-bottom">
+        <div class="testi-av">K</div>
+        <div><div class="testi-name">Kavitha Rao</div><div class="testi-role">Operations Head, ScaleForce</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-num"><span class="blue">71</span>%</div>
+      <div class="stat-lbl">Average Drop in Customer Acquisition Cost</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><span class="blue">41</span>%</div>
+      <div class="stat-lbl">Cold Leads Converted to Calls — Fully Automated</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><span class="blue">47</span></div>
+      <div class="stat-lbl">Manual Processes Eliminated Per Business</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><span class="blue">15</span>hrs</div>
+      <div class="stat-lbl">Less Work Per Week. More Revenue Per Day.</div>
+    </div>
+  </div>
+
+  <div class="cta-row">
+    <a href="https://ai.stcs.in/register" class="btn">I Want Results Like These →</a>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 3 TRANSFORMATIONS -->
+<div>
+<div class="sec">
+<div class="sec-inner">
+  <div class="sec-label">Why 2026 Is Different</div>
+  <h2 class="sec-title">3 Transformations in 3 Hours<br>That Are <span class="blue">Rewriting the Rulebook</span></h2>
+  <p class="sec-desc">The rules of building and scaling a business changed in the last 90 days. Three shifts have fundamentally altered what's possible — and most business owners haven't noticed yet.</p>
+
+  <div class="transforms-grid">
+    <div class="t-card">
+      <div class="t-ghost">01</div>
+      <div class="t-badge">Transformation 1</div>
+      <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div class="t-title">Your Business Runs While You Sleep</div>
+      <div class="t-desc">AI agents that handle inbound leads, book appointments, qualify prospects, and run follow-ups — 24/7, sounding genuinely human. No missed opportunities, no manual work.</div>
+    </div>
+    <div class="t-card">
+      <div class="t-ghost">02</div>
+      <div class="t-badge">Transformation 2</div>
+      <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div class="t-title">Every Customer Feels Like a VIP</div>
+      <div class="t-desc">The one-to-one-to-millions model is here. Every interaction, every email, every touchpoint — personalised as if you wrote it yourself. At any scale, without extra effort.</div>
+    </div>
+    <div class="t-card">
+      <div class="t-ghost">03</div>
+      <div class="t-badge">Transformation 3</div>
+      <div class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+      <div class="t-title">Predict Before You Spend a Rupee</div>
+      <div class="t-desc">Customer behaviour, campaign performance, market trends — know what will happen before you invest. No guessing. No wasted ad spend. Data-driven decisions every time.</div>
+    </div>
+  </div>
+
+  <div class="cta-row">
+    <a href="https://ai.stcs.in/register" class="btn">Show Me All 3 Transformations →</a>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- FRAMEWORK -->
+<div class="fw-section bg-dark">
+<div class="sec">
+<div class="sec-inner">
+  <div style="text-align:center;">
+    <div class="sec-label center">The Framework</div>
+    <h2 class="sec-title" style="text-align:center;">The Exponential Growth Framework:<br><span class="blue">How We 16X Your Business</span></h2>
+    <p class="sec-desc" style="margin:0 auto; text-align:center;">Systematic, step-by-step multiplication — not hype. It's math.</p>
+  </div>
+
+  <div class="mult-strip">
+    <div class="mult-card">
+      <div class="mult-x">2×</div>
+      <div class="mult-title">Double Your Leads</div>
+      <div class="mult-desc">AI systems that attract ideal clients 24/7. Magnetic content, self-optimising campaigns, a presence that works while you sleep.</div>
+      <div class="mult-res">Result: Your Business × 2</div>
+    </div>
+    <div class="mult-card">
+      <div class="mult-x">4×</div>
+      <div class="mult-title">Double Your Conversions</div>
+      <div class="mult-desc">Plug every leak in your funnel. AI qualification, personalised presentations that convert, objection handling — automatically.</div>
+      <div class="mult-res">Result: Your Business × 4</div>
+    </div>
+    <div class="mult-card">
+      <div class="mult-x">8×</div>
+      <div class="mult-title">Double Purchase Frequency</div>
+      <div class="mult-desc">Know when customers are ready to buy again. Smart retargeting and loyalty systems that run without lifting a finger.</div>
+      <div class="mult-res">Result: Your Business × 8</div>
+    </div>
+    <div class="mult-card">
+      <div class="mult-x">16×</div>
+      <div class="mult-title">Double Average Transaction</div>
+      <div class="mult-desc">Upsell sequences, order bumps, value ladders, high-ticket offers — the final multiplier that turns good businesses into great ones.</div>
+      <div class="mult-res">Result: Your Business × 16</div>
+    </div>
+  </div>
+  <div class="formula-bar">
+    <div class="eq">2 × 2 × 2 × 2 = 16X Your Business</div>
+  </div>
+
+  
+
+<!-- CALCULATOR -->
+<div>
+<div class="sec">
+<div class="sec-inner">
+  <div class="sec-label">Calculate Your Growth</div>
+  <h2 class="sec-title">See What's Possible<br><span class="blue">For Your Business</span></h2>
+  <p class="sec-desc">Enter your current numbers. Drag the sliders. See what the 16X framework could mean for you — specifically.</p>
+
+  <div class="calc-wrap">
+    <div class="calc-title">Your Growth Calculator</div>
+    <div class="calc-sub">Enter your numbers or drag the sliders. Results update instantly.</div>
+    <div class="calc-body">
+      <div class="calc-inputs">
+        <div class="c-row">
+          <label class="c-lbl">Current Monthly Revenue</label>
+          <div class="c-field">
+            <span class="c-pre">₹</span>
+            <input type="number" id="inRev" value="400000" min="10000" max="50000000" step="10000" oninput="calc()">
+          </div>
+        </div>
+        <div class="sl-row">
+          <div class="sl-top"><span class="sl-lbl">Lead Growth Multiplier</span><span class="sl-val" id="vLead">2.0×</span></div>
+          <input type="range" id="sLead" min="1.2" max="3" step="0.1" value="2" oninput="calc()">
+        </div>
+        <div class="sl-row">
+          <div class="sl-top"><span class="sl-lbl">Conversion Improvement</span><span class="sl-val" id="vConv">2.0×</span></div>
+          <input type="range" id="sConv" min="1.2" max="3" step="0.1" value="2" oninput="calc()">
+        </div>
+        <div class="sl-row">
+          <div class="sl-top"><span class="sl-lbl">Avg Transaction Increase</span><span class="sl-val" id="vTrans">2.0×</span></div>
+          <input type="range" id="sTrans" min="1.2" max="3" step="0.1" value="2" oninput="calc()">
+        </div>
+      </div>
+      <div class="calc-result">
+        <div><div class="cr-lbl">You're Currently Earning</div><div class="cr-amount" id="rBefore">₹4,00,000/mo</div></div>
+        <div class="cr-hr"></div>
+        <div class="cr-arrow">↓</div>
+        <div><div class="cr-lbl">After Implementing the Framework</div><div class="cr-amount big" id="rAfter">₹32,00,000/mo</div></div>
+        <div class="cr-hr"></div>
+        <div><div class="cr-lbl">Your Total Multiplier</div><div class="cr-amount big" id="rMult">8.0×</div></div>
+        <div class="cr-note">Based on your inputs. Actual results depend on implementation and business context.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- BONUSES -->
+<div class="bg-dark">
+<div class="sec">
+<div class="sec-inner">
+  <div class="sec-label">Register Before Timer Hits Zero</div>
+  <h2 class="sec-title">Bonuses You Unlock<br><span class="blue">When You Act Now</span></h2>
+  <p class="sec-desc">These bonuses disappear the moment the timer hits zero. No exceptions, no extensions.</p>
+
+  <div class="bonuses-list">
+    <div class="b-row">
+      <div class="b-idx">01</div>
+      <div class="b-body"><div class="b-tag">Instant Access</div><div class="b-title">AI Business Automation Blueprint</div><div class="b-desc">Complete step-by-step playbook for building your first AI automation — 47 templates, pre-built workflows, and done-for-you prompts you can deploy immediately.</div></div>
+      <div class="b-val"><div class="bv-lbl">Value</div><div class="bv-num">₹49,999</div></div>
+    </div>
+    <div class="b-row">
+      <div class="b-idx">02</div>
+      <div class="b-body"><div class="b-tag">6 Weeks Post-Workshop</div><div class="b-title">Private Implementation Cohort</div><div class="b-desc">6 weeks of live implementation sessions after the workshop. Get your questions answered, systems reviewed, roadblocks cleared — directly.</div></div>
+      <div class="b-val"><div class="bv-lbl">Value</div><div class="bv-num">₹29,999</div></div>
+    </div>
+    <div class="b-row">
+      <div class="b-idx">03</div>
+      <div class="b-body"><div class="b-tag">Curated Resource</div><div class="b-title">AI Tool Stack Master Guide</div><div class="b-desc">Exact tools, pricing, and integrations powering India's fastest-growing AI businesses. Cut your research time from weeks to minutes.</div></div>
+      <div class="b-val"><div class="bv-lbl">Value</div><div class="bv-num">₹19,999</div></div>
+    </div>
+    <div class="b-row">
+      <div class="b-idx">04</div>
+      <div class="b-body"><div class="b-tag">Lifetime Access</div><div class="b-title">Business Excellence Alumni Community</div><div class="b-desc">Permanent access to the private alumni network — AI-first entrepreneurs helping each other scale. Partnerships, referrals, and accountability built in.</div></div>
+      <div class="b-val"><div class="bv-lbl">Value</div><div class="bv-num">₹39,999</div></div>
+    </div>
+  </div>
+  <div class="bonuses-total">
+    <span class="bt-lbl">Total Bonus Value</span>
+    <span class="bt-amt">₹1,38,996</span>
+  </div>
+
+  <div class="cta-row">
+    <a href="https://ai.stcs.in/register" class="btn">Claim All Bonuses — Register Now →</a>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- GUARANTEE -->
+<div class="guar-section-bg">
+<div class="sec">
+<div class="sec-inner">
+  <div class="sec-label">Risk-Free Registration</div>
+  <h2 class="sec-title">Still Not Sure?<br><span class="blue">We've Got Your Back.</span></h2>
+
+  <div class="guar-wrap">
+    <div class="gold-badge-wrap">
+      <div class="gold-badge">
+        <img src="gold-badge.png" alt="100% Money Back Guarantee">
+      </div>
+    </div>
+    <div class="guar-body">
+      <div class="guar-title">100% <span>Money-Back</span><br>Guarantee</div>
+      <div class="guar-divider"></div>
+      <div class="guar-text">
+        <p>Get this amazing offer today for just <strong>₹999</strong>, and attend with complete confidence. Go through the full workshop — and if you don't see a clear path to multiplying your business with AI, simply send us an email.</p>
+        <p>We'll refund <strong>every rupee. No questions asked.</strong></p>
+      </div>
+      <a href="https://ai.stcs.in/register" class="guar-btn-gold">Register Now at ₹999/- Only</a>
+      <div class="guar-badges">
+        <span class="guar-badge-pill">No-risk entry</span>
+        <span class="guar-badge-pill">Full refund policy</span>
+        <span class="guar-badge-pill">Zero questions asked</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- LETTER -->
+<div class="letter-outer">
+  <div class="letter-inner">
+    <div class="l-label">Confession from the Desk of Summit</div>
+    <h2 class="l-title">A Personal Note<br>Before You Decide</h2>
+    <div class="l-paper">
+      <div class="l-greet">Dear Business Owner,</div>
+      <div class="l-body">
+        <p>I'll be completely honest with you.</p>
+        <p>When I started integrating AI into my businesses, I wasted months — and significant money — trying things that didn't work. I watched countless webinars. I read every article. I tested dozens of tools.</p>
+        <p>And then something clicked.</p>
+        <p>I realised the problem wasn't the tools. The problem was that nobody was showing Indian entrepreneurs <strong>how to actually implement</strong> AI in their specific business context — with our market conditions, our customer behaviour, our revenue structures.</p>
+        <p>That's exactly what this Business Excellence Workshop was built to do.</p>
+        <p>This is not a course. This is not just another webinar. This is a hands-on implementation workshop where you leave with working systems — not theory, not inspiration boards, not another PDF you'll never open.</p>
+        <p>If you're ready to stop watching AI happen to other businesses and start making it happen in yours — I'll see you on 28th March.</p>
+      </div>
+      <div class="l-sign">
+        <div class="l-sign-from">To your exponential growth,</div>
+        <div class="l-sign-name">Summit</div>
+        <div class="l-sign-title">Founder, STCS &nbsp;|&nbsp; ai.stcs.in</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="bg-dark">
+<div class="sec">
+<div class="sec-inner">
+  <div class="sec-label center">FAQ</div>
+  <h2 class="sec-title" style="text-align:center;">Frequently Asked<br><span class="blue">Questions</span></h2>
+
+  <div class="faq-list">
+    <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">How will I get access / the link to attend the workshop?<span class="faq-icon">+</span></button><div class="faq-a">After registration, you'll receive a confirmation email with all access details, the Zoom link, schedule, and pre-workshop resources within 24 hours of registering.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">How will I get the bonus items?<span class="faq-icon">+</span></button><div class="faq-a">All bonus items are delivered digitally after the workshop. You'll receive download links and access credentials for each bonus via email within 48 hours of the event.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">Do I need technical knowledge to attend?<span class="faq-icon">+</span></button><div class="faq-a">Absolutely not. This workshop is designed for business owners, not developers. Every session is built so that a non-technical person can follow along and implement. If you can use a smartphone, you can build what we teach here.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">Will I get a recording of the program?<span class="faq-icon">+</span></button><div class="faq-a">Yes. All registered attendees receive access to workshop recordings for 30 days after the event, so you can revisit implementation steps at your own pace.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">Who is this workshop ideal for?<span class="faq-icon">+</span></button><div class="faq-a">Any business owner with a sales process, a customer base, and a desire to grow. Consulting, e-commerce, SaaS, coaching, real estate, services — if you have customers and want more revenue with less manual effort, this is for you.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">Is this applicable to my industry?<span class="faq-icon">+</span></button><div class="faq-a">Yes. The AI systems and frameworks taught here are industry-agnostic. We've successfully implemented them across 196+ industries. The core principles apply universally.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">Can I attend if I want to start a business but don't have one yet?<span class="faq-icon">+</span></button><div class="faq-a">Absolutely. Several of our best success stories are from attendees who came with just an idea and left with a fully operational AI-powered business framework ready to launch.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">Can I attend along with my business partner?<span class="faq-icon">+</span></button><div class="faq-a">Yes, and we actually encourage it. Implementing AI systems as a team dramatically accelerates results. Each attendee requires a separate registration. Contact us for group pricing options.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">Is the money-back guarantee real?<span class="faq-icon">+</span></button><div class="faq-a">100% real. Attend every session, implement what we teach, and if you don't see a clear path to multiplying your business with AI within 30 days, we will refund every rupee. Simply email <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c9babcb9b9a6bbbd89babdaabae7a0a7">[email&#160;protected]</a>.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="faqToggle(this)">What if I have questions about registration or attending?<span class="faq-icon">+</span></button><div class="faq-a">Email us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="26555356564954526655524555084f48">[email&#160;protected]</a> and our team will respond within 4 hours during business days. We're here to make sure you have everything you need.</div></div>
+  </div>
+
+  <div class="cta-row">
+    <a href="https://ai.stcs.in/register" class="btn">I'm Ready — Secure My Spot Now →</a>
+    <p style="font-size:12px; color:var(--gray); margin-top:12px;">Still have questions? Email <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="81f2f4f1f1eef3f5c1f2f5e2f2afe8ef">[email&#160;protected]</a></p>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+  <div class="sb-left">
+    <div class="sb-pr-row">
+      <span class="sb-price">₹999</span>
+      <span class="sb-strike">₹9,999</span>
+    </div>
+    <span class="sb-note">Early-bird · 100% money-back guarantee included</span>
+  </div>
+  <div class="sb-right">
+    <div>
+      <div class="sb-timer-lbl">Offer Ends In</div>
+      <div class="sb-timer-blocks">
+        <div class="t-blk" id="sh">00</div>
+        <span class="t-sep">:</span>
+        <div class="t-blk" id="sm">00</div>
+        <span class="t-sep">:</span>
+        <div class="t-blk" id="ss">00</div>
+      </div>
+    </div>
+    <a href="https://ai.stcs.in/register" class="sb-cta">Book Your Spot at ₹999 Only →</a>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Countdown
+const END = new Date('2026-03-28T09:00:00+05:30');
+function tick() {
+  const d = Math.max(0, END - Date.now());
+  const pad = n => String(n).padStart(2,'0');
+  document.getElementById('sh').textContent = pad(Math.floor(d/3600000));
+  document.getElementById('sm').textContent = pad(Math.floor((d%3600000)/60000));
+  document.getElementById('ss').textContent = pad(Math.floor((d%60000)/1000));
+}
+tick(); setInterval(tick,1000);
+
+// FAQ
+function faqToggle(btn) {
+  const item = btn.parentElement;
+  const open = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!open) item.classList.add('open');
+}
+
+// VSL
+function loadVid() {
+  document.getElementById('vslBox').innerHTML =
+    '<iframe src="https://www.youtube.com/watch?v=h5S2dBFLQHQ" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen style="width:100%;height:100%;display:block;"></iframe>';
+}
+
+// Calculator — fixed: read all 3 sliders + revenue input
+function fmt(n) {
+  if (n>=10000000) return '₹'+(n/10000000).toFixed(1)+'Cr';
+  if (n>=100000)   return '₹'+(n/100000).toFixed(1)+'L';
+  return '₹'+Math.round(n).toLocaleString('en-IN');
+}
+function calc() {
+  const rev  = parseFloat(document.getElementById('inRev').value) || 0;
+  const l    = parseFloat(document.getElementById('sLead').value);
+  const c    = parseFloat(document.getElementById('sConv').value);
+  const t    = parseFloat(document.getElementById('sTrans').value);
+  document.getElementById('
+
