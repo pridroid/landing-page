@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -70,15 +71,17 @@
   </div>
 </div>
 
-<div class="image-showcase">
-  <div class="showcase-inner">
-    <img 
-      src="prev-workshop.png" 
-      alt="A diverse group of entrepreneurs attending the Summit Tiklle workshop." 
-      class="workshop-photo"
-      loading="lazy">
-  </div>
-</div>
+<section class="collage-showcase">
+    <div class="collage-inner">
+        <div class="polaroid-frame img-left">
+            <img src="prev-workshop.png" alt="Workshop experience">
+        </div>
+
+        <div class="polaroid-frame img-right">
+            <img src="prev-workshop2.png" alt="Workshop implementation">
+        </div>
+    </div>
+</section>
 
 <section class="proof-detail-sec">
     <div class="sec-inner">
@@ -87,6 +90,7 @@
         <h2 class="attendee-title">Last Year's<br>Attendees</h2>
         
         <p class="attendee-subtitle">Didn't Just Learn New Skills.</p>
+        
         <p class="attendee-blue">They Transformed Their Business.</p>
 
         <p class="proof-para">
@@ -98,49 +102,144 @@
 <div class="sec bg-dark">
 <div class="sec-inner">
   <h2 class="sec-title">Real People. <span style="color:var(--blue)">Real Transformations.</span></h2>
-  <div class="testi-grid">
-    <div class="testi-card">
-      <p class="testi-quote">"After implementing the AI systems from this workshop, we eliminated 35+ manual processes. Lead response time dropped from 4 hours to under 3 minutes — fully automated."</p>
-      <div class="testi-bottom"><div class="testi-av">R</div><div><div class="testi-name">Rajesh Mehta</div><div class="testi-role">Founder, TechScale India</div></div></div>
-    </div>
-    <div class="testi-card">
-      <p class="testi-quote">"I came in skeptical. I left with a working AI system handling 60% of our customer queries without human intervention. Revenue is up 3x in 4 months."</p>
-      <div class="testi-bottom"><div class="testi-av">P</div><div><div class="testi-name">Priya Sharma</div><div class="testi-role">CEO, GrowthEdge Consulting</div></div></div>
-    </div>
-    <div class="testi-card">
-      <p class="testi-quote">"We doubled our leads in 6 weeks, improved conversions by 38%, and our cost per acquisition dropped by over 60%. The 16X framework is not theory — it's a system."</p>
-      <div class="testi-bottom"><div class="testi-av">A</div><div><div class="testi-name">Arjun Krishnan</div><div class="testi-role">Director, NexGen SaaS</div></div></div>
-    </div>
-  </div>
   
+  <!-- Card 1 — Santosh -->
+        <div class="review-card">
+          <div class="review-top">
+            <div class="review-stars">★★★★★</div>
+            <div class="review-badge">Business Growth</div>
+          </div>
+          <p class="review-headline">"Cracked a ₹50 Cr Airport Contract"</p>
+          <p class="review-text">By attending this Business Excellence Workshop, I got clarity on how to attract ready-to-buy clients. I acquired a global client, partnered with 7 big companies, and cracked the Goa Airport contract. Every business owner should attend this workshop.</p>
+          <div class="review-person">
+            <img src="santosh.jpeg" alt="Santosh Kunthe" class="review-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="review-avatar-fallback">SK</div>
+            <div>
+              <div class="review-name">Santosh Kunthe</div>
+              <div class="review-role">Founder, Satori Consulting & Glass Fasad Manufacture, Aurangabad</div>
+            </div>
+          </div>
+        </div>
+   
+        <!-- Card 2 — Dr. Shirish -->
+        <div class="review-card">
+          <div class="review-top">
+            <div class="review-stars">★★★★★</div>
+            <div class="review-badge">Healthcare</div>
+          </div>
+          <p class="review-headline">"Patient Retention Boosted by 250%"</p>
+          <p class="review-text">Automated my client acquisition and client referral system completely. Patient retention boosted by 250% — without me having to manually follow up with anyone.</p>
+          <div class="review-person">
+            <img src="shirish.png" alt="Dr. Shirish Bhagvat" class="review-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="review-avatar-fallback">SB</div>
+            <div>
+              <div class="review-name">Dr. Shirish Bhagvat</div>
+              <div class="review-role">Laparoscopic Surgeon, Mumbai</div>
+            </div>
+          </div>
+        </div>
+   
+        <!-- Card 3 — Ishwarya (Featured) -->
+        <div class="review-card review-card--featured">
+          <div class="review-featured-content">
+            <div>
+              <div class="review-top">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-badge review-badge--gold">Operations Transformation</div>
+              </div>
+              <p class="review-headline">"From People-Driven to Process-Driven Clinic"</p>
+              <p class="review-text">Streamlined our entire operation — from a people-driven clinic to a fully process-driven one. Now able to give individual attention to every patient. Everything is systematized. The transformation has been remarkable for our staff, our patients, and our growth.</p>
+            </div>
+            <div class="review-person">
+              <img src="ishwarya.jpeg" alt="Ishwarya Fertility Center" class="review-photo review-photo--lg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="review-avatar-fallback review-avatar-fallback--lg">IF</div>
+              <div>
+                <div class="review-name">Ishwarya Fertility Center</div>
+                <div class="review-role">Fertility Clinic, Bangalore</div>
+              </div>
+            </div>
+          </div>
+        </div>
+   
+        <!-- Card 4 — Gaurav -->
+        <div class="review-card">
+          <div class="review-top">
+            <div class="review-stars">★★★★★</div>
+            <div class="review-badge">Real Estate</div>
+          </div>
+          <p class="review-headline">"7× Conversion in 3 Months"</p>
+          <p class="review-text">I've tried countless sales strategies and consultants before, but this workshop was a game changer. The precision and clarity alone gave us a dramatic 7× conversion boost in just 3 months.</p>
+          <div class="review-person">
+            <img src="shetty.jpeg" alt="Gaurav Shetty" class="review-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="review-avatar-fallback">GS</div>
+            <div>
+              <div class="review-name">Gaurav Shetty</div>
+              <div class="review-role">Founder, Solitare Real Estate</div>
+            </div>
+          </div>
+        </div>
+   
+        <!-- Card 5 — Snehal -->
+        <div class="review-card">
+          <div class="review-top">
+            <div class="review-stars">★★★★★</div>
+            <div class="review-badge">Consulting</div>
+          </div>
+          <p class="review-headline">"₹2L/Month Revenue in 60 Days"</p>
+          <p class="review-text">Summit's disciplined strategy gave me a fast path to relaunch my HR career. From a complete break to ₹2L per month within two months — as a solo HR Consultant. The roadmap was clear and the results were faster than I thought possible.</p>
+          <div class="review-person">
+            <img src="saas.jpeg" alt="Snehal Mugdam" class="review-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="review-avatar-fallback">SM</div>
+            <div>
+              <div class="review-name">Snehal Mugdam</div>
+              <div class="review-role">HR Consultant</div>
+            </div>
+          </div>
+        </div>
+   
+        <!-- Card 6 — Vikram -->
+        <div class="review-card">
+          <div class="review-top">
+            <div class="review-stars">★★★★★</div>
+            <div class="review-badge">Tech Startup</div>
+          </div>
+          <p class="review-headline">"More Clarity in One Session Than Months of Advice"</p>
+          <p class="review-text">If you're on the fence, just do it. The insights I gained in a single session were more valuable than months of navigating conflicting advice. The tailored strategy has put us on a direct path to where we want to be — faster than we ever thought possible.</p>
+          <div class="review-person">
+            <img src="saas.jpeg" alt="Vikram Joshi" class="review-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="review-avatar-fallback">VJ</div>
+            <div>
+              <div class="review-name">Vikram Joshi</div>
+              <div class="review-role">Tech Startup Founder</div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>  
   <div class="stats-row">
-    <div class="stat-item"><div class="stat-num"><span class="counter" data-target="71">0</span>%</div><div class="stat-lbl">Drop in Acquisition Cost</div></div>
-    <div class="stat-item"><div class="stat-num"><span class="counter" data-target="41">0</span>%</div><div class="stat-lbl">Leads to Calls Conversion</div></div>
-    <div class="stat-item"><div class="stat-num"><span class="counter" data-target="47">0</span></div><div class="stat-lbl">Manual Processes Cut</div></div>
-    <div class="stat-item"><div class="stat-num"><span class="counter" data-target="15">0</span>h</div><div class="stat-lbl">Less Work Per Week</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="counter" data-target="71">0</span>%</div><div class="stat-lbl">Average Drop in Customer Acquisition Cost</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="counter" data-target="41">0</span>%</div><div class="stat-lbl">Cold Leads to Converted Calls.. Fully Automated</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="counter" data-target="47">0</span></div><div class="stat-lbl">Manual Processes Elimnated Per Buisness</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="counter" data-target="15">0</span>hrs</div><div class="stat-lbl">Less Work Per Week. More Revenue Per Day</div></div>
   </div>
 </div>
 </div>
 
 <div class="sec">
-<div class="sec-inner">
-  <div class="sec-label">Why 2026 Is Different</div>
-  <h2 class="sec-title">3 Transformations in 3 Hours</h2>
-  <div class="transforms-grid">
-    <div class="t-card">
-      <div class="t-ghost">01</div><div class="t-title">Business Runs While You Sleep</div>
-      <p class="t-desc">AI agents that handle leads, qualification, and follow-ups 24/7, sounding genuinely human.</p>
+  <div class="sec-inner">
+    <div class="proof-pill">Why 2026 Is Different</div>
+    
+    <div class="framework-container">
+      <img src="whatwillchange.png" alt="Business Breakthrough 2026" class="framework-img">
     </div>
-    <div class="t-card">
-      <div class="t-ghost">02</div><div class="t-title">Personalization at Massive Scale</div>
-      <p class="t-desc">Every customer feels like a VIP with AI-tailored interactions that require zero manual effort.</p>
+    
+    <div class="framework-container">
+      <img src="whowillthishelp.png" alt="Business Breakthrough 2026" class="framework-img">
     </div>
-    <div class="t-card">
-      <div class="t-ghost">03</div><div class="t-title">Data-Driven Predictions</div>
-      <p class="t-desc">Predict customer behavior and campaign ROI before spending a single Rupee. No more guessing.</p>
-    </div>
+    
   </div>
-</div>
 </div>
 
 <div class="fw-section sec">
