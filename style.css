@@ -4,6 +4,7 @@
     --red: #ff3130;
     --blue-light: #4d8fff;
     --black: #0b121e;
+    --gold: #d1b109;
     --dark: #f8faff;
     --dark2: #eef3ff;
     --white: #ffffff;
@@ -349,8 +350,8 @@ body {
 }
 .sec-title {
     font-family: "Barlow Condensed", sans-serif;
-    font-size: clamp(29px, 6vw, 45px);
-    font-weight: 700;
+    font-size: clamp(25px, 6vw, 45px);
+    font-weight: 800;
     line-height: 1.1;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -481,8 +482,8 @@ body {
 
 /* ── FRAMEWORK & CALCULATOR ── */
 .fw-section {
-    background: var(--black);
-    color: #fff;
+    background: #ffffff;
+    color: var(--text);
     padding-bottom: 80px;
 }
 .mult-strip {
@@ -1189,4 +1190,171 @@ input[type="range"] {
         margin: 20px 0;
         border-radius: 0; /* Full width look on mobile */
     }
+}
+/* ── NEW FRAMEWORK SECTION ── */
+.fw-intro {
+  text-align: center;
+  color: var(--black);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Each step: no card, no border, no bg — just open layout */
+.fw-step {
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 32px 0 8px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+/* Thin divider between steps */
+.fw-step + .fw-step {
+  border-top: 1px solid var(--border);
+  padding-top: 40px;
+  margin-top: 8px;
+}
+
+.fw-multiplier {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fw-mult-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 60px;
+  font-weight: 900;
+  color: var(--blue);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.fw-step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px 0;
+}
+
+.fw-step-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text);
+  text-align: left;
+  width: 100%;
+}
+
+.fw-step-desc {
+  color: var(--black);
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: left;
+  width: 100%;
+}
+
+.fw-result-bar {
+  background: #0b121e;
+  color: var(--gold);
+  font-family: 'Michroma', monospace;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 14px 32px;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Formula block */
+.fw-formula-block {
+  background: #0b121e;
+  border-radius: 16px;
+  padding: 48px 32px;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.fw-formula {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+.fw-f-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--blue);
+}
+.fw-f-op {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+  opacity: 0.5;
+}
+.fw-f-eq {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+  opacity: 0.8;
+}
+.fw-f-result {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 56px;
+  font-weight: 900;
+  color: #f5c518;
+}
+
+.fw-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+.fw-example-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.fw-ex-currently {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+.fw-ex-arrow {
+  color: #94a3b8;
+  font-size: 20px;
+}
+.fw-ex-arrow2 {
+  color: #94a3b8;
+  font-size: 24px;
+  font-weight: bold;
+}
+.fw-ex-from {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+}
+.fw-ex-to {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 52px;
+  font-weight: 900;
+  color: #f5c518;
+  line-height: 1;
 }
