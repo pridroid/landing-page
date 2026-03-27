@@ -216,15 +216,19 @@ body {
     .brand-col {
         padding-right: 0;
     }
-    .info-text {
-        font-size: clamp(11px, 2.8vw, 14px);
-        letter-spacing: 1px;
+    info-text{
+            font-size: clamp(11px, 2.8vw, 14px);
+            letter-spacing: 1px;
+            white-space: normal;
+            text-align: center;
     }
+    
     .info-dot {
         width: 5px;
         height: 5px;
     }
     .info-col {
+        align-items: center;
         gap: 10px;
     }
     .brand-accent span:nth-child(1) {
@@ -236,6 +240,34 @@ body {
     .brand-accent span:nth-child(3) {
         width: 24px;
     }
+    
+    .logo-lockup{
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        width: 100%;
+    }
+    
+    .brand-col{
+        align-items: center;
+        padding-right: 0;
+    }
+    
+    .brand-first-line{
+        justify-content: center;
+    }
+    
+    .logo-divider{
+        
+        height: 80px;
+        margin: 10px 0;
+    }
+    
+    .info-row{
+        justify-content: center;
+    }
+    
 }
  
 @media (max-width: 400px) {
@@ -297,8 +329,10 @@ body {
 /* ── WARNING BLOCK ── */
 .warning-block {
     text-align: center;
-    padding: 40px 20px;
+    padding: 20px 20px;
     border-bottom: 0.5px solid var(--border);
+    margin-bottom: 0;
+    padding-bottom: 10px;
 }
 .warn-word {
     font-family: Oxanium;
@@ -345,6 +379,8 @@ body {
     font-size: clamp(60px, 15vw, 120px);
     font-weight: 600;
     line-height: 1;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 .live-accent {
@@ -870,7 +906,7 @@ body {
 
 .total-value{
     color: #e53935; /* bold red */
-    font-size: 28px;
+    font-size: 58px;
     font-weight: 700;
 }
 
@@ -882,7 +918,7 @@ body {
 }
 
 .free-text{
-    font-size: clamp(60px, 12vw, 120px);
+    font-size: clamp(80px, 12vw, 120px);
     font-weight: 900;
     color: #1dbf3a; /* green */
     letter-spacing: 2px;
@@ -992,9 +1028,10 @@ input[type="range"] {
 
 /* Subheader (Red Pill) */
 .proof-pill {
-    display: inline-block;
+    display: block;
     border: 1.5px solid var(--red);
     color: var(--red);
+    margin: 0 auto 40px; 
     padding: 8px 30px;
     border-radius: 50px;
     font-family: "Inter", sans-serif;
@@ -1763,30 +1800,38 @@ input[type="range"] {
       text-align: center;
       margin-top: 50px;
     }
-
+    
+    .rs-cta {
+        text-align: center;
+        margin-top: 40px;
+        padding: 20px;
+    }
+    
     .rs-cta-btn {
-      display: inline-block;
-      background: #b5e530;
-      color: #0f172a;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-decoration: none;
-      padding: 20px 40px;
-      border-radius: 6px;
-      line-height: 1.4;
-      transition: opacity 0.2s;
+        display: inline-block;
+            background: linear-gradient(135deg, #1a6bff, #4d8fff);
+            color: #fff;
+            font-family: "Barlow Condensed", sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 25px rgba(26, 107, 255, 0.3);
+            transition: all 0.3s ease;
     }
 
-    .rs-cta-btn:hover { opacity: 0.88; }
+    .rs-cta-btn:hover { 
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(26, 107, 255, 0.4); }
 
     .rs-cta-sub {
-      display: block;
-      font-size: 15px;
-      font-weight: 600;
-      color: #1a9bdc;
-      margin-top: 4px;
+        margin-top: 12px;
+            font-size: 14px;
+            color: var(--gray);
+            font-weight: 600;
+            letter-spacing: 1px;
     }
 
     /* ── Responsive ── */
@@ -1805,6 +1850,80 @@ input[type="range"] {
         width: 100%;
       }
     }
+/* ── MOSAIC COLLAGE ── */
+.collage-mosaic {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 860px;
+  margin: 20px auto 0;
+  padding: 0 12px;
+}
+
+.mosaic-row {
+  display: flex;
+  gap: 6px;
+}
+
+.mosaic-cell {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.mosaic-cell--wide {
+  flex: 1;
+}
+
+.mosaic-row--top .mosaic-cell { height: 200px; }
+.mosaic-row--mid .mosaic-cell { height: 180px; }
+.mosaic-row--stage .mosaic-cell { height: 240px; }
+.mosaic-row--bot .mosaic-cell  { height: 180px; }
+
+.mosaic-img-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.mosaic-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.mosaic-img-wrap:hover .mosaic-img {
+  transform: scale(1.04);
+}
+
+.mosaic-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 20px 12px 10px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .mosaic-row--top .mosaic-cell  { height: 150px; }
+  .mosaic-row--mid .mosaic-cell  { height: 130px; }
+  .mosaic-row--stage .mosaic-cell{ height: 180px; }
+  .mosaic-row--bot .mosaic-cell  { height: 130px; }
+  .mosaic-label { font-size: 10px; }
+}
+
 /* Container to keep everything centered */
 .live-container {
     text-align: center;
@@ -1829,4 +1948,33 @@ input[type="range"] {
     line-height: 1.3;
     text-transform: none;
     margin: 0;
+}
+
+/* Bottom bar */
+.footer-bottom-bar {
+  padding: 18px 24px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.footer-bottom-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.footer-copy {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #8a7040;
+  line-height: 1.6;
+  text-align: center;
+}
+.footer-link {
+  color: #a88430;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-link:hover {
+  color: #e8c86a;
 }
