@@ -29,12 +29,24 @@
 </header>
 
 <div class="vsl-wrap">
-  <div class="vsl-frame" id="vslBox" onclick="loadVid()">
-    <div class="vsl-placeholder">
-      <div class="vsl-play"><svg viewBox="0 0 24 24" width="30" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
-      <span style="color:#fff; font-size:12px; text-transform:uppercase; letter-spacing:2px;">Watch Overview</span>
-    </div>
-  </div>
+
+  <script src="https://fast.wistia.com/player.js" async></script>
+  <script src="https://fast.wistia.com/embed/j9sfcygleh.js" async type="module"></script>
+
+  <style>
+    wistia-player[media-id='j9sfcygleh']:not(:defined) {
+      background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/j9sfcygleh/swatch');
+      display: block;
+      filter: blur(5px);
+      padding-top:56.25%;
+    }
+  </style>
+
+  <wistia-player 
+    media-id="j9sfcygleh" 
+    aspect="1.7777777777777777">
+  </wistia-player>
+
 </div>
 
 <div class="warning-block">
@@ -297,7 +309,7 @@
       </div>
     </section>
     
-    <br>
+    <br><br>
     
     <h2 class="sec-title" style="text-align: center; color: var(--BLACK);">
         WHO THIS WORKSHOP WILL HELP THE BEST?
@@ -626,8 +638,8 @@
   <div class="b-sec-label">Bonuses If You Register Before Timer Hits 0</div>
   </div>
   
-  <div class="framework-container">
-    <img src="bonuses-img.png" alt="Business Breakthrough 2026" class="framework-img">
+  <div class="bonus-image-wrap">
+    <img src="bonus123.png" alt="Business Breakthrough 2026" class="bonus-image">
   </div>
   
   
@@ -699,7 +711,7 @@
           <a href="https://ai.stcs.in/register" class="warn-read-btn" style="display: inline-block; padding: 15px 40px; border: 2px solid #D4AF37; color:#D4AF37; text-decoration: none; font-weight: bold; border-radius: 5px; margin-bottom: 30px;">Register at ₹99/-</a>
       
       
-          <div style="border: 1px solid rgba(0,0,0,0.1); border-radius: 4px; padding: 40px; background-color: #e9d96a; font-family: 'Arial', sans-serif; max-width: 600px; text-align: left; color: #1a1a1a;">
+          <div style="border: 1px solid rgba(0,0,0,0.1); border-radius: 4px; padding: 40px; background-color: #d9c258; font-family: 'Arial', sans-serif; max-width: 600px; text-align: left; color: #1a1a1a;">
             
             <h1 style="text-align: center; font-size: 36px; margin-bottom: 5px; font-weight: 800; color: #000;">A Promise</h1>
             <p style="text-align: center; font-size: 20px; margin-top: 0; margin-bottom: 30px; font-weight: 400; color: #1a1a1a;"><strong> No Questions Asked Money Back Guarantee</strong></p>
@@ -854,20 +866,21 @@
       <div class="faq-a">No, attend only after you have an existing business.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="faqToggle(this)">Can I attend this if I want to start a business but don't have one yet?<span>+</span></button>
+      <button class="faq-q" onclick="faqToggle(this)">If I miss attending this time can I attend this again?<span>+</span></button>
+      <div class="faq-a">Yes you may attend it again at a later date.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="faqToggle(this)">What do I need to keep handy during the webinar?<span>+</span></button>
+      <div class="faq-a">Just an open mind and a book to make a lot of notes.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="faqToggle(this)">
+          Can I attend this program along with my business partner(s)?<span>+</span></button>
       <div class="faq-a">No, attend only after you have an existing business.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="faqToggle(this)">Can I attend this if I want to start a business but don't have one yet?<span>+</span></button>
-      <div class="faq-a">No, attend only after you have an existing business.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="faqToggle(this)">Can I attend this if I want to start a business but don't have one yet?<span>+</span></button>
-      <div class="faq-a">No, attend only after you have an existing business.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="faqToggle(this)">Can I attend this if I want to start a business but don't have one yet?<span>+</span></button>
-      <div class="faq-a">No, attend only after you have an existing business.</div>
+      <button class="faq-q" onclick="faqToggle(this)">Is the workshop live?<span>+</span></button>
+      <div class="faq-a">Yes, 100% live</div>
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="faqToggle(this)">Is the money-back guarantee real? <span>+</span></button>
@@ -878,13 +891,25 @@
 </div>
 
 <div class="sticky-bar">
-  <div>
-    <div class="sb-price">₹99 <span style="font-size:14px; color:#666; text-decoration:line-through;">₹999</span></div>
-    <div style="color:#888; font-size:11px;">Offer Ends Soon</div>
-  </div>
-  <a href="button" class="rs-cta-btn payBtn">Book My Seat</a>
-</div>
+  
+  <div class="sb-left">
+    <div class="sb-price" style="color:#FFFFFF">
+      ₹99 
+      <span class="old-price"  style="color:#FFFFFF" >₹999</span>
+    </div>
 
+    <div class="sb-sub" style="color:#FFFFFF">Offer Ends Soon</div>
+
+    <!-- ✅ TIMER (just added, nothing else touched) -->
+    <div class="sb-timer">
+      ⏳ Ends in <span id="countdown">15:00</span>
+    </div>
+  </div>
+
+  <!-- ✅ BUTTON (unchanged) -->
+  <a href="#" class="rs-cta-btn payBtn">Book My Seat</a>
+
+</div>
 <script>
 function faqToggle(btn) {
   const item = btn.closest('.faq-item');
@@ -976,6 +1001,30 @@ setTimeout(runAllCounters, 500);</script>
     </p>
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+  let time = 15 * 60;
+
+  function updateTimer() {
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    document.getElementById("countdown").textContent =
+      minutes + ":" + seconds;
+
+    if (time > 0) {
+      time--;
+    } else {
+      clearInterval(timerInterval);
+      document.getElementById("countdown").textContent = "00:00";
+    }
+  }
+
+  let timerInterval = setInterval(updateTimer, 1000);
+  updateTimer();
+</script>
 
 <script>
   var options = {
