@@ -443,12 +443,13 @@ body {
 }
 .sec-title {
     font-family: "Barlow Condensed", sans-serif;
-    font-size: clamp(25px, 6vw, 45px);
+    font-size: clamp(30px, 8vw, 50px);
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 20px;
     text-transform: uppercase;
     justify-content: center;
+    text-align: center;
 }
 .sec-desc {
     color: var(--gray);
@@ -875,21 +876,20 @@ body {
 
 .b-sec-label{
     
-    font-size: clamp(
-        30px,
-        6vw,
-        48px
-    ); /* Wide fonts take up more horizontal space, so we scale size carefully */
-    font-weight: 600; /* Michroma is naturally bold */
-    text-align: center;
+    font-family: "Michroma", sans-serif; /* SAME font */
+    font-size: clamp(40px, 8vw, 68px); /* SAME size */
+    font-weight: 800; /* SAME weight */
     color: var(--green);
     line-height: 1;
     letter-spacing: -1px;
     margin-bottom: 10px;
+    text-align: center;
     text-transform: none;
-    /* This adds the 'wide' feeling if the font isn't wide enough */
     transform: scaleX(1.1);
     display: block;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .bonus-text {
