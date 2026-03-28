@@ -14,38 +14,16 @@
 
 <header class="header">
   <div class="logo-lockup">
-    <div class="brand-col">
-      <div class="brand-name">
-        <div class="brand-first-line">
-          <div class="logo-icon-wrap">
-            <svg class="logo-svg" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect class="bar bar1" x="4" y="34" width="8" height="14" rx="1.5" fill="currentcolor"/>
-              <rect class="bar bar2" x="16" y="24" width="8" height="24" rx="1.5" fill="currentcolor"/>
-              <rect class="bar bar3" x="28" y="14" width="8" height="34" rx="1.5" fill="currentcolor"/>
-              <line class="arrow-line" x1="6" y1="42" x2="46" y2="8" stroke="currentcolor" stroke-width="3" stroke-linecap="round"/>
-              <polyline class="arrow-head" points="34,6 48,6 48,20" stroke="currentcolor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            </svg>
-          </div>
-          <span class="brand-line--business">Business</span>
-        </div>
-        <div class="brand-line--excellence">Excellence</div>
-        <div class="brand-line--workshop">Workshop</div>
-      </div>
+    <div class="h-brand">
+      <div class="h-word">Business</div>
+      <div class="h-word">Excellence</div>
+      <div class="h-word">Workshop</div>
     </div>
-    <div class="logo-divider"></div>
-    <div class="info-col">
-      <div class="info-row">
-        <div class="info-dot"></div>
-        <span class="info-text">3 Hour Online Workshop</span>
-      </div>
-      <div class="info-row">
-        <div class="info-dot"></div>
-        <span class="info-text">On 04th April 2026</span>
-      </div>
-      <div class="info-row">
-        <div class="info-dot"></div>
-        <span class="info-text">9:00 AM — 12:00 PM IST</span>
-      </div>
+    <div class="h-divider"></div>
+    <div class="h-info">
+      <div class="h-row"><span class="h-icon"><svg viewBox="0 0 32 32" width="16" height="16" fill="none"><rect width="32" height="32" rx="6" fill="#2D8CFF"/><path d="M5 11.5A2.5 2.5 0 0 1 7.5 9h10A2.5 2.5 0 0 1 20 11.5v9A2.5 2.5 0 0 1 17.5 23h-10A2.5 2.5 0 0 1 5 20.5v-9Z" fill="white"/><path d="M21 14.2l5.2-3.2a.8.8 0 0 1 1.2.7v9.6a.8.8 0 0 1-1.2.7L21 18.8V14.2Z" fill="white"/></svg></span><span class="h-text">3 Hour Online Workshop</span></div>
+      <div class="h-row"><span class="h-icon">🗓️</span><span class="h-text">04th April 2026</span></div>
+      <div class="h-row"><span class="h-icon">⏱️</span><span class="h-text">9:00 AM — 12:00 PM IST</span></div>
     </div>
   </div>
 </header>
@@ -157,9 +135,7 @@
 </section>
 
 <div class="sec bg-dark">
-<div class="sec-inner">
-  <h2 class="sec-title">Real People. <span style="color:var(--blue)">Real Transformations.</span></h2>
-  
+<div class="sec-inner">  
   <!-- Card 1 — Santosh -->
         <div class="review-card">
           <div class="review-top">
@@ -196,24 +172,23 @@
           </div>
         </div>
    
-        <!-- Card 3 — Ishwarya (Featured) -->
-        <div class="review-card review-card--featured">
-          <div class="review-featured-content">
+        
+        <!-- Card 3 — Ishwarya -->
+        <div class="review-card">
+          <div class="review-top">
+            <div class="review-stars">★★★★★</div>
+            <div class="review-badge">IVF Specialists</div>
+          </div>
+          <p class="review-headline">"From People-Driven to Process-Driven Clinic"</p>
+          <p class="review-text">
+            Streamlined our entire operation — from a people-driven clinic to a fully process-driven one. Now able to give individual attention to every patient. Everything is systematized. The transformation has been remarkable for our staff, our patients, and our growth.
+          </p>
+          <div class="review-person">
+            <img src="ishwarya.jpeg" alt="Ishwarya Fertility Center" class="review-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="review-avatar-fallback">IF</div>
             <div>
-              <div class="review-top">
-                <div class="review-stars">★★★★★</div>
-                <div class="review-badge review-badge--gold">IVF specialists</div>
-              </div>
-              <p class="review-headline">"From People-Driven to Process-Driven Clinic"</p>
-              <p class="review-text">Streamlined our entire operation — from a people-driven clinic to a fully process-driven one. Now able to give individual attention to every patient. Everything is systematized. The transformation has been remarkable for our staff, our patients, and our growth.</p>
-            </div>
-            <div class="review-person">
-              <img src="ishwarya.jpeg" alt="Ishwarya Fertility Center" class="review-photo review-photo--lg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <div class="review-avatar-fallback review-avatar-fallback--lg">IF</div>
-              <div>
-                <div class="review-name">Ishwarya Fertility Center</div>
-                <div class="review-role">Fertility Clinic, Bangalore</div>
-              </div>
+              <div class="review-name">Ishwarya Fertility Center</div>
+              <div class="review-role">Fertility Clinic, Bangalore</div>
             </div>
           </div>
         </div>
@@ -402,8 +377,7 @@
             id="userInput"
             type="number"
             min="0"
-            placeholder="enter your amout here"
-            value="10000"
+            placeholder="enter amount"
             oninput="calcResult()"
           />
           <span class="fw-slash">/mo</span>
