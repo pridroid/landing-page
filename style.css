@@ -1040,7 +1040,7 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: 0.3s ease-out;
-    color: var(--gray);
+    color: var(--black);
     font-size: 15px;
     line-height: 1.6;
 }
@@ -2045,45 +2045,47 @@ input[type="range"] {
 }
 
 .whatsapp-proof-section {
-    padding: 25px 20px;
-    background: #f8faff;
-    text-align: center;
+    max-width: 1100px;   /* increase width */
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
 .wp-headline {
-    font-size: 20px;
+    font-size: 35px;
     font-weight: 800;
     margin-bottom: 20px;
 }
 
 /* SCROLL CONTAINER */
 .wp-scroll {
-    max-height: 500px; /* controls scroll area */
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-right: 6px;
+    display: grid;
+    grid-template-columns: 1fr; /* mobile */
+    gap: 40px;
 }
 
 /* EACH ITEM */
 .wp-item {
-    display: flex;
+    display: block;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* FIX */
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .wp-scroll {
+        grid-template-columns: 1fr 1fr; /* 2 columns */
+    }
 }
 
 /* IMAGE */
 .wp-img {
-    width: 100%;
-    max-width: 320px;
-    border-radius: 14px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    width: 100%;  /* fills column */
+    border-radius: 12px;
 }
 
 /* TEXT BELOW IMAGE */
 .wp-caption {
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 600;
     margin-top: 8px;
     color: #0f172a;
@@ -2091,4 +2093,9 @@ input[type="range"] {
 
 .wp-scroll {
     scroll-behavior: smooth;
+}
+
+.highlight {
+    color: var(--blue); /* uses your existing theme color */
+    font-weight: 700;
 }
