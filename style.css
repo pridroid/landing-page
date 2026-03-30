@@ -1011,9 +1011,9 @@ wistia-player {
 }
 
 .old-price {
-  font-size: 16px;
+  font-size: 25px;
   text-decoration: line-through;
-  color: #aaa;
+  color: var(--white);
   margin-left: 6px;
 }
 
@@ -1512,13 +1512,14 @@ wistia-player {
 /* Wrapper should break out and allow more width */
 .bonus-image-wrap {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 40px auto;
   padding: 0 16px;
 }
 
 .bonus-image {
   width: 100%;
+  max-width: 1200px;
   height: auto;
   display: block;
   border-radius: 18px;
@@ -2129,7 +2130,7 @@ wistia-player {
 }
 .footer-copy {
   font-family: 'Inter', sans-serif;
-  font-size: 12px;
+  font-size: 19px;
   color: #8a7040;
   line-height: 1.6;
   text-align: center;
@@ -2294,4 +2295,17 @@ wistia-player {
   font-family: 'Michroma', sans-serif;
   font-weight: 400;
   letter-spacing: 1px;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo img {
+  width: 180px;   /* increase this (try 160–220px) */
+  height: auto;
+  display: block;
+  margin: 12px auto; /* spacing + center */
 }
