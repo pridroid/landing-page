@@ -862,7 +862,7 @@
             </p>
 
             <p style="line-height: 1.5; margin-bottom: 30px; font-size: 18px;">
-              If after attending the workshop, you still don't find enough value for some reason, I take complete responsibility and ownership of that and hence, I promise to give a complete refund of the workshop amount of Rs 99. All you have to do is mail to me at <strong>hello@stcs.in</strong> and my team will ensure you are provided with a refund in the shortest amount of time.
+              If after attending the workshop, you still don't find enough value for some reason, I take complete responsibility and ownership of that and hence, I promise to give a complete refund of the workshop amount of Rs 99. All you have to do is mail to me at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aec6cbc2c2c1eedddacddd80c7c0">[email&#160;protected]</a></strong> and my team will ensure you are provided with a refund in the shortest amount of time.
             </p>
 
             <div style="font-weight: bold; font-size: 20px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
@@ -981,7 +981,7 @@
   </a>
 
 </div>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function faqToggle(btn) {
   const item = btn.closest('.faq-item');
   const isOpen = item.classList.contains('open');
@@ -1086,7 +1086,7 @@ setTimeout(runAllCounters, 500);</script>
 
 </div>
 
-<form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_SXRRnqX0JPr1yM" async> </script> </form>
+
 
 <script>
   let time = 15 * 60;
@@ -1112,43 +1112,43 @@ setTimeout(runAllCounters, 500);</script>
   updateTimer();
 </script>
 
+<!-- Razorpay Payment Button — visually hidden but present in DOM so it renders -->
+<div id="rzp-btn-wrap" style="position:absolute; width:1px; height:1px; overflow:hidden; opacity:0; pointer-events:none; left:-9999px; top:-9999px;">
+  <form id="rzp-form">
+    <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_SXRRnqX0JPr1yM" async></script>
+  </form>
+</div>
+
 <script>
-  var options = {
-    key: "rzp_live_RIbwxys3o2tDEj",
-    amount: "9900", // ₹99 → Razorpay uses paise
-    currency: "INR",
-    name: "Business Excellence Workshop",
-    description: "Workshop Access",
-
-    handler: function (response) {
-      window.location.href = "https://ai.stcs.in/thank-you";
-    },
-
-    theme: {
-      color: "#1a6bff"
+  // Click any .payBtn → find and trigger the hidden Razorpay button
+  // Retries up to 20 times (2s) to handle async script load
+  function triggerRzpBtn() {
+    var rzpBtn = document.querySelector('#rzp-form button');
+    if (rzpBtn) {
+      rzpBtn.click();
+    } else {
+      var tries = 0;
+      var poll = setInterval(function () {
+        tries++;
+        var btn = document.querySelector('#rzp-form button');
+        if (btn) {
+          clearInterval(poll);
+          btn.click();
+        } else if (tries >= 20) {
+          clearInterval(poll);
+          alert('Payment failed to load. Please refresh and try again.');
+        }
+      }, 100);
     }
-  };
+  }
 
-  var rzp1 = new Razorpay(options);
-
-  document.querySelectorAll('.payBtn').forEach(function(btn){
-    btn.addEventListener('click', function(e){
+  document.querySelectorAll('.payBtn').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
       e.preventDefault();
-      rzp1.open();
+      triggerRzpBtn();
     });
   });
 </script>
 
 <script>
   document.querySelector('.unmute-overlay').addEventListener('click', function () {
-    const player = document.querySelector('wistia-player');
-    if (player) {
-      player.muted = false;
-      player.play();
-    }
-    this.style.display = 'none'; // hide overlay after click
-  });
-</script>
-
-</body>
-</html>
