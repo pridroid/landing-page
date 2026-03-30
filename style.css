@@ -1511,7 +1511,8 @@ wistia-player {
 
 /* Wrapper should break out and allow more width */
 .bonus-image-wrap {
-  width: 100%;
+    
+     margin-right: calc(-50vw + 50%);
   max-width: 1300px;
   margin: 40px auto;
   padding: 0 16px;
@@ -1520,6 +1521,7 @@ wistia-player {
 .bonus-image {
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
   height: auto;
   display: block;
   border-radius: 18px;
@@ -2304,7 +2306,7 @@ wistia-player {
 }
 
 .footer-logo img {
-  width: 180px;   /* increase this (try 160–220px) */
+  width: 100px;   /* increase this (try 160–220px) */
   height: auto;
   display: block;
   margin: 12px auto; /* spacing + center */
