@@ -20,18 +20,8 @@
 <body>
 
 <header class="header">
-  <div class="logo-lockup">
-    <div class="h-brand">
-      <div class="h-word">Business</div>
-      <div class="h-word">Excellence</div>
-      <div class="h-word">Workshop</div>
-    </div>
-    <div class="h-divider"></div>
-    <div class="h-info">
-      <div class="h-row"><span class="h-icon"><svg viewBox="0 0 32 32" width="16" height="16" fill="none"><rect width="32" height="32" rx="6" fill="#2D8CFF"/><path d="M5 11.5A2.5 2.5 0 0 1 7.5 9h10A2.5 2.5 0 0 1 20 11.5v9A2.5 2.5 0 0 1 17.5 23h-10A2.5 2.5 0 0 1 5 20.5v-9Z" fill="white"/><path d="M21 14.2l5.2-3.2a.8.8 0 0 1 1.2.7v9.6a.8.8 0 0 1-1.2.7L21 18.8V14.2Z" fill="white"/></svg></span><span class="h-text">3 Hour Online Workshop</span></div>
-      <div class="h-row"><span class="h-icon">🗓️</span><span class="h-text">04th April 2026</span></div>
-      <div class="h-row"><span class="h-icon">⏱️</span><span class="h-text">9:00 AM — 12:00 PM IST</span></div>
-    </div>
+  <div class="header-inner">
+    <img src="header-img.png" alt="Business Excellence Workshop" class="header-img">
   </div>
 </header>
 
@@ -39,19 +29,18 @@
 
   <script src="https://fast.wistia.com/player.js" async></script>
   <script src="https://fast.wistia.com/embed/j9sfcygleh.js" async type="module"></script>
-
-  <style>
-    wistia-player[media-id='j9sfcygleh']:not(:defined) {
-      background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/j9sfcygleh/swatch');
-      display: block;
-      filter: blur(5px);
-      padding-top:56.25%;
-    }
-  </style>
-
+   
+  <div class="video-wrap">
+    <div class="unmute-overlay">🔊 Tap to unmute 
+    </div> 
+  
   <wistia-player 
     media-id="j9sfcygleh" 
-    aspect="1.7777777777777777">
+    aspect="1.7777777777777777"
+    autoplay="true"
+    muted="true"
+    loop
+  >
   </wistia-player>
 
 </div>
@@ -269,6 +258,9 @@
       </div>
     </div>
   </section>  
+  
+  <div class="arrow-big">↓</div> 
+  
   <div class="stats-row">
     <div class="stat-item"><div class="stat-num"><span class="counter" data-target="71">0</span>%</div><div class="stat-lbl">Average Drop in Customer Acquisition Cost</div></div>
     <div class="stat-item"><div class="stat-num"><span class="counter" data-target="41">0</span>%</div><div class="stat-lbl">Cold Leads to Converted Calls.. Fully Automated</div></div>
@@ -450,18 +442,34 @@
 </div>
 </div>
 
+<!-- CTA Button Section -->
+<div class="rs-cta">
+  <a href="#" class="rs-cta-btn payBtn">
+    Yes — I'm In. I'm Ready To 16X My Business →
+  </a>
+  <p class="rs-cta-sub">
+    04th April 2026 | Live On Zoom
+  </p>
+</div> <br> <br>
+
       <!-- ══ MODULE 1: FOUNDATION ══ -->
       <a  class="proof-pill"> THE REVENUE SYSTEMS </a>
-      <h2 class="sec-title" style="text-align:center;">The Framework Is The Math <br><span style="color:var(--blue)"; font-family="Michroma">These Are the Systems That Make It Real.</span></h2><br><br>
+      <h2 class="sec-title">
+        The Framework Is the Math.
+        <br>
+        <span class="sec-subtitle">
+          These Are the Systems That Make It Real.
+        </span>
+      </h2>
 
         <div class="rs-module">
           <div class="rs-module-bar rs-bar-green">FOUNDATION</div>
           <div class="rs-module-content">
             <div class="rs-module-img-wrap">
-              <img
-                src="foundation-img.JPG"
-                alt="Foundation Module"
-                class="rs-module-img"
+                <img
+                  src="foundation-img.JPG"
+                  alt="Foundation Module"
+                  class="rs-module-img img-custom-1"
                 onerror="this.src='https://placehold.co/440x280/1a2a1a/4a8c2a?text=Foundation+Session'"
               >
             </div>
@@ -536,9 +544,9 @@
           <div class="rs-module-content">
             <div class="rs-module-img-wrap">
               <img
-                src="premium.png"
-                alt="Unfair Edge Module"
-                class="rs-module-img"
+                  src="premium.png"
+                    alt="Unfair Edge Module"
+                    class="rs-module-img img-custom-2"
                 onerror="this.src='https://placehold.co/440x280/1a0510/8c1a40?text=Unfair+Edge+Session'"
               >
             </div>
@@ -550,15 +558,7 @@
           </div>
         </div>
        
-        <!-- CTA Button Section -->
-        <div class="rs-cta">
-          <a href="#" class="rs-cta-btn payBtn">
-            Yes — I'm In. I'm Ready To 16X My Business →
-          </a>
-          <p class="rs-cta-sub">
-            04th April 2026 | Live On Zoom
-          </p>
-        </div>
+        
         
         <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
         
@@ -592,7 +592,7 @@
         <section class="coach-section">
         <div class="sec-inner">
           <div class="proof-pill">Meet Your Coach</div>
-          <h2 class="sec-title">Summit Tiklle: <span style="color:var(--blue)">₹90 Lakhs LOST</span> → <span style="color:#0F172A;">₹1700 Cr+ IMPACT</span></h2>
+          <h2 class="sec-title">Summit Tiklle: <span style="color:var(--blue)">₹90 Lakhs LOST</span> → <span style="color:#0F172A; ">₹1700 Cr+ IMPACT</span></h2>
           
           <div class="coach-inner">
             <div class="coach-photo-col">
@@ -639,6 +639,84 @@
 </div>
 </section>
 
+<div class="whatsapp-proof-section">
+
+  <p class="wp-headline">
+      You Do NOT Need to Be an Industry Legend to  <span class="highlight"> Get Legendary Results…
+  </p>
+
+  <div class="wp-scroll">
+
+    <!-- Item 1 -->
+    <div class="wp-item">
+      <img src="wp1.png" class="wp-img">
+      <p class="wp-caption">
+        Web Developer closes <span class="highlight">INR 3L</span> in a 
+        <span class="highlight">single day</span>
+      </p>
+    </div> 
+
+    <!-- Item 2 -->
+    <div class="wp-item">
+      <img src="wp2.png" class="wp-img">
+    <p class="wp-caption">
+      Ecom Developer closed <span class="highlight">1.8L in 3 weeks</span>
+    </p>
+    </div> 
+
+    <!-- Item 3 -->
+    <div class="wp-item">
+      <img src="wp3.png" class="wp-img">
+    <p class="wp-caption">
+      AI Content Marketer Does <span class="highlight">5L in 2 months</span>
+    </p>
+    </div> 
+
+    <!-- Item 4 -->
+    <div class="wp-item">
+      <img src="wp4.png" class="wp-img">
+    <p class="wp-caption">
+      Tanima got <span class="highlight">100 leads in 6 days</span> and closed 
+      <span class="highlight">INR 70K in 1 day</span>
+    </p>
+    </div> <br>
+
+    <!-- Item 5 -->
+    <div class="wp-item">
+      <img src="wp5.png" class="wp-img">
+    <p class="wp-caption">
+      Personal Branding Client closed <span class="highlight">INR 2L Deal</span> + 
+        <span class="highlight">30K/month retainer</span>
+      </p>
+    </div>
+  </div> <br> <br>
+
+    <!-- Item 6 -->
+    <div class="wp-item">
+      <img src="wp6.png" class="wp-img">
+    <p class="wp-caption">
+      Sanjay (Healer) closed his 1st deal 
+      <span class="highlight">(INR 1L)</span> within 
+      <span class="highlight">2 weeks</span>
+    </p>
+    </div> <br> <br>
+
+
+    <!-- Item 7 -->
+    <div class="wp-item">
+      <img src="wp71.png" class="wp-img">
+      <img src="wp72.png" class="wp-img">
+      <img src="wp73.png" class="wp-img">
+          
+      <p class="wp-caption">
+          Arali Workshops
+          Swapnali (Arali Workshops) did <span class="highlight">1.1CR in just 1 year </span>  with an ad spend of 29L 
+      </p>
+    </div> <br>
+
+
+  </div>
+
 <section class="bonuses-section">
 <div class="bonus-container">
 <div class="sec-inner">
@@ -646,7 +724,7 @@
   </div>
   
   <div class="bonus-image-wrap">
-    <img src="bonus123.png" alt="Business Breakthrough 2026" class="bonus-image">
+    <img src="bonus-image.png" alt="Business Breakthrough 2026" class="bonus-image">
   </div>
   
   
@@ -693,12 +771,28 @@
       </div>
   </div>
 
-  <div class="offer-highlight">
-    <div class="total-value">Total Value: ₹15,495</div>
-    <div class="cta-line">
-      Get Your Copy Today For
+  <div class="offer-box">
+  
+    <div class="total-value">
+      Total Value: <span class="strike">₹15,495</span>
     </div>
-    <div class="free-text">FREE!</div>
+  
+    <div class="regular-price">
+      Regular Price: ₹999/-
+    </div>
+  
+    <div class="today-price">
+      Today's Price: ₹99/-
+    </div>
+  
+    <p class="offer-sub">
+      Reserve Your Seat Before The Timer Ends To Unlock Bonuses Worth ₹15,495/-
+    </p>
+  
+    <a href="#" class="offer-btn payBtn">
+      REGISTER NOW AT ₹99/- ONLY
+    </a>
+  
   </div>
 </section>
 <br>
@@ -746,84 +840,9 @@
       <br>
       <br>    
       
-      <div class="whatsapp-proof-section">
-      
-        <p class="wp-headline">
-          What Happens When You Actually Implement
-        </p>
-      
-        <div class="wp-scroll">
-      
-          <!-- Item 1 -->
-          <div class="wp-item">
-            <img src="wp1.png" class="wp-img">
-            <p class="wp-caption">
-              Web Developer closes <span class="highlight">INR 3L</span> in a 
-              <span class="highlight">single day</span>
-            </p>
-          </div> <br>
-      
-          <!-- Item 2 -->
-          <div class="wp-item">
-            <img src="wp2.png" class="wp-img">
-          <p class="wp-caption">
-            Ecom Developer closed <span class="highlight">1.8L in 3 weeks</span>
-          </p>
-          </div> <br>
-      
-          <!-- Item 3 -->
-          <div class="wp-item">
-            <img src="wp3.png" class="wp-img">
-          <p class="wp-caption">
-            AI Content Marketer Does <span class="highlight">5L in 2 months</span>
-          </p>
-          </div> <br>
-      
-          <!-- Item 4 -->
-          <div class="wp-item">
-            <img src="wp4.png" class="wp-img">
-          <p class="wp-caption">
-            Tanima got <span class="highlight">100 leads in 6 days</span> and closed 
-            <span class="highlight">INR 70K in 1 day</span>
-          </p>
-          </div> <br>
-      
-          <!-- Item 5 -->
-          <div class="wp-item">
-            <img src="wp5.png" class="wp-img">
-          <p class="wp-caption">
-            Personal Branding Client closed <span class="highlight">INR 2L Deal</span> + 
-              <span class="highlight">30K/month retainer</span>
-            </p>
-          </div>
-        </div> <br>
-    
-          <!-- Item 6 -->
-          <div class="wp-item">
-            <img src="wp6.png" class="wp-img">
-          <p class="wp-caption">
-            Sanjay (Healer) closed his 1st deal 
-            <span class="highlight">(INR 1L)</span> within 
-            <span class="highlight">2 weeks</span>
-          </p>
-          </div> <br>
       
       
-          <!-- Item 7 -->
-          <div class="wp-item">
-            <img src="wp7.png" class="wp-img">
-            <p class="wp-caption">
-              Sanjay (Healer) closed his <span class="highlight">1st deal</span> 
-              <span class="highlight">(INR 1L)</span> within 
-              <span class="highlight">2 weeks</span>
-            </p>
-          </div> <br>
       
-      
-        </div>
-      
-      </div>
-
 <div class="sec" style="background:var(--dark);">
 <div class="sec-inner">
   <h2 class="sec-title" style="text-align:center;">Frequently Asked Questions</h2>
@@ -900,21 +919,19 @@
 <div class="sticky-bar">
   
   <div class="sb-left">
-    <div class="sb-price" style="color:#FFFFFF">
-      ₹99 
-      <span class="old-price"  style="color:#FFFFFF" >₹999</span>
+    <div class="sb-price">
+      ₹99 <span class="old-price">₹999</span>
     </div>
 
-    <div class="sb-sub" style="color:#FFFFFF">Offer Ends Soon</div>
-
-    <!-- ✅ TIMER (just added, nothing else touched) -->
     <div class="sb-timer">
-      ⏳ Ends in <span id="countdown">15:00</span>
+      ⏳ Offer Ends in <span id="countdown">14:40</span>
     </div>
   </div>
 
-  <!-- ✅ BUTTON (unchanged) -->
-  <a href="#" class="rs-cta-btn payBtn">Book My Seat</a>
+  <a href="#" class="rs-cta-btn payBtn">
+    <span class="line1">Book Your Spot</span>
+    <span class="line2">@ ₹99</span>
+  </a>
 
 </div>
 <script>
@@ -1051,6 +1068,17 @@ setTimeout(runAllCounters, 500);</script>
     button.addEventListener('click', function(e){
       rzp1.open();
     });
+  });
+</script>
+
+<script>
+  document.querySelector('.unmute-overlay').addEventListener('click', function () {
+    const player = document.querySelector('wistia-player');
+    if (player) {
+      player.muted = false;
+      player.play();
+    }
+    this.style.display = 'none'; // hide overlay after click
   });
 </script>
 
