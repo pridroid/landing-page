@@ -1086,7 +1086,7 @@ setTimeout(runAllCounters, 500);</script>
 
 </div>
 
-<script src=""></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <script>
   let time = 15 * 60;
@@ -1114,20 +1114,26 @@ setTimeout(runAllCounters, 500);</script>
 
 <script>
   var options = {
-    "key": "rzp_live_RIbwxys3o2tDEj",
-    "amount": "9900",
-    "currency": "INR",
-    "name": "Business Excellence Workshop",
-    "description": "Workshop Access",
-    "handler": function (response){
-        window.location.href = "https://ai.stcs.in/thank-you";
+    key: "rzp_live_RIbwxys3o2tDEj",
+    amount: "9900", // ₹99 → Razorpay uses paise
+    currency: "INR",
+    name: "Business Excellence Workshop",
+    description: "Workshop Access",
+
+    handler: function (response) {
+      window.location.href = "https://ai.stcs.in/thank-you";
+    },
+
+    theme: {
+      color: "#1a6bff"
     }
   };
 
   var rzp1 = new Razorpay(options);
 
-  document.querySelectorAll('.payBtn').forEach(function(button){
-    button.addEventListener('click', function(e){
+  document.querySelectorAll('.payBtn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
       rzp1.open();
     });
   });
