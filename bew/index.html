@@ -1086,40 +1086,38 @@ setTimeout(runAllCounters, 500);</script>
 </script>
 
 <!-- Razorpay Payment Button — visibility:hidden keeps it in DOM and fully rendered -->
-<div id="rzp-btn-wrap" style="opacity: 0; position: absolute; height: 0; width: 0; overflow: hidden;">
-  <form id="rzp-form">
-    <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_SXRRnqX0JPr1yM" async></script>
-  </form>
-</div>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <script>
 document.querySelectorAll('.payBtn').forEach(function(btn) {
-  btn.addEventListener('click', function(e) {
-    e.preventDefault();
-    
-    // Function to find and click the Razorpay-generated button
-    var attemptClick = function() {
-      var rzpBtn = document.querySelector('#rzp-form .razorpay-payment-button');
-      if (rzpBtn) {
-        rzpBtn.click();
-        return true;
-      }
-      return false;
-    };
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
 
-    // If it's not there, check every 100ms for up to 3 seconds
-    if (!attemptClick()) {
-      var checkExist = setInterval(function() {
-        if (attemptClick()) {
-          clearInterval(checkExist);
-        }
-      }, 100);
-      
-      // Stop checking after 3 seconds to avoid infinite loops
-      setTimeout(function() { clearInterval(checkExist); }, 3000);
-    }
-  });
-}); </script>
+        var options = {
+            "key": "rzp_live_XXXXXXXXXXXXXX", // Replace with your LIVE API Key ID
+            "amount": "49900", // Amount in paise (49900 = 499 INR)
+            "currency": "INR",
+            "name": "Your Brand Name",
+            "description": "Course/Product Name",
+            "image": "https://yourwebsite.com/logo.png",
+            "handler": function (response){
+                alert("Payment Successful! ID: " + response.razorpay_payment_id);
+                window.location.href = "/thank-you"; 
+            },
+            "prefill": {
+                "name": "", 
+                "email": "",
+                "contact": ""
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+    });
+});
+</script>
 
 <script>
   document.querySelector('.unmute-overlay').addEventListener('click', function () {
