@@ -1086,32 +1086,40 @@ setTimeout(runAllCounters, 500);</script>
 </script>
 
 <!-- Razorpay Payment Button — visibility:hidden keeps it in DOM and fully rendered -->
-<div id="rzp-btn-wrap" style="visibility:hidden; height:0; overflow:hidden;">
+<div id="rzp-btn-wrap" style="opacity: 0; position: absolute; height: 0; width: 0; overflow: hidden;">
   <form id="rzp-form">
     <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_SXRRnqX0JPr1yM" async></script>
   </form>
 </div>
 
 <script>
-  document.querySelectorAll('.payBtn').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      var rzpBtn = document.querySelector('#rzp-form button');
+document.querySelectorAll('.payBtn').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    // Function to find and click the Razorpay-generated button
+    var attemptClick = function() {
+      var rzpBtn = document.querySelector('#rzp-form .razorpay-payment-button');
       if (rzpBtn) {
         rzpBtn.click();
-      } else {
-        // Script still loading — poll up to 5s
-        var tries = 0;
-        var poll = setInterval(function() {
-          tries++;
-          var b = document.querySelector('#rzp-form button');
-          if (b) { clearInterval(poll); b.click(); }
-          else if (tries >= 25) { clearInterval(poll); }
-        }, 200);
+        return true;
       }
-    });
+      return false;
+    };
+
+    // If it's not there, check every 100ms for up to 3 seconds
+    if (!attemptClick()) {
+      var checkExist = setInterval(function() {
+        if (attemptClick()) {
+          clearInterval(checkExist);
+        }
+      }, 100);
+      
+      // Stop checking after 3 seconds to avoid infinite loops
+      setTimeout(function() { clearInterval(checkExist); }, 3000);
+    }
   });
-</script>
+}); </script>
 
 <script>
   document.querySelector('.unmute-overlay').addEventListener('click', function () {
