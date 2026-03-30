@@ -1112,34 +1112,33 @@ setTimeout(runAllCounters, 500);</script>
   updateTimer();
 </script>
 
-<!-- Razorpay Payment Button — visually hidden but present in DOM so it renders -->
-<div id="rzp-btn-wrap" style="position:absolute; width:1px; height:1px; overflow:hidden; opacity:0; pointer-events:none; left:-9999px; top:-9999px;">
+<!-- Razorpay Payment Button — rendered visibly so script loads, then hidden via JS -->
+<div id="rzp-btn-wrap" style="position:fixed; bottom:-200px; left:0; opacity:0.01; pointer-events:none; z-index:-1;">
   <form id="rzp-form">
-    <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_SXRRnqX0JPr1yM" async></script>
+    <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_SXRRnqX0JPr1yM"></script>
   </form>
 </div>
 
 <script>
-  // Click any .payBtn → find and trigger the hidden Razorpay button
-  // Retries up to 20 times (2s) to handle async script load
   function triggerRzpBtn() {
     var rzpBtn = document.querySelector('#rzp-form button');
     if (rzpBtn) {
       rzpBtn.click();
-    } else {
-      var tries = 0;
-      var poll = setInterval(function () {
-        tries++;
-        var btn = document.querySelector('#rzp-form button');
-        if (btn) {
-          clearInterval(poll);
-          btn.click();
-        } else if (tries >= 20) {
-          clearInterval(poll);
-          alert('Payment failed to load. Please refresh and try again.');
-        }
-      }, 100);
+      return;
     }
+    // Poll every 200ms for up to 10 seconds
+    var tries = 0;
+    var poll = setInterval(function () {
+      tries++;
+      var btn = document.querySelector('#rzp-form button');
+      if (btn) {
+        clearInterval(poll);
+        btn.click();
+      } else if (tries >= 50) {
+        clearInterval(poll);
+        alert('Payment failed to load. Please refresh and try again.');
+      }
+    }, 200);
   }
 
   document.querySelectorAll('.payBtn').forEach(function (btn) {
@@ -1152,3 +1151,9 @@ setTimeout(runAllCounters, 500);</script>
 
 <script>
   document.querySelector('.unmute-overlay').addEventListener('click', function () {
+    
+  });
+</script>
+
+</body>
+</html>
