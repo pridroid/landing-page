@@ -78,6 +78,21 @@ wistia-player[media-id='k9pswa9i2g']:not(:defined) {
   </wistia-player>
 </div>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const overlay = document.querySelector(".unmute-overlay");
+  const player = document.querySelector("wistia-player");
+
+  overlay.addEventListener("click", function () {
+    if (player) {
+      player.muted = false;   // unmute
+      player.volume = 1;      // ensure volume
+      overlay.style.display = "none"; // hide overlay after click
+    }
+  });
+});
+</script>
+
 <div class="warning-block">
   <div class="warn-word">WARNING:</div>
   <p class="warn-headline">
