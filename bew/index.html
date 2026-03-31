@@ -1085,38 +1085,47 @@ setTimeout(runAllCounters, 500);</script>
   updateTimer();
 </script>
 
-<!-- Razorpay Payment Button — visibility:hidden keeps it in DOM and fully rendered -->
-<div style="display: none;">
-  <form id="rzp-footer-form">
-    <script 
-      src="https://checkout.razorpay.com/v1/payment-button.js" 
-      data-payment_button_id="pl_SXRRnqX0JPr1yM" 
-      async>
-    </script>
-  </form>
-</div>
-
 <script>
   document.addEventListener("DOMContentLoaded", function() {
+    // This looks for every button with the class 'payBtn'
     const payButtons = document.querySelectorAll('.payBtn');
-    
+
     payButtons.forEach(button => {
       button.addEventListener('click', function(e) {
         e.preventDefault();
-        // Finds the actual button generated inside the hidden form and clicks it
-        const realRzpBtn = document.querySelector('#rzp-footer-form .razorpay-payment-button');
-        if (realRzpBtn) {
-          realRzpBtn.click();
-        } else {
-          console.error("Razorpay button not loaded yet.");
-        }
+
+        // Directly redirects the user to your Hosted Payment Page
+        window.location.href = "https://rzp.io/rzp/business-excellence-workshop";
       });
     });
   });
 </script>
 
+
+
+<script>
+  const unmuteOverlay = document.querySelector('.unmute-overlay');
+  if(unmuteOverlay) {
+      unmuteOverlay.addEventListener('click', function () {
+        window._wq = window._wq || [];
+        _wq.push({ id: "j9sfcygleh", onReady: function(video) {
+          video.unmute();
+          unmuteOverlay.style.display = 'none';
+        }});
+      });
+  }
+</script>
+
+
+
 <script>
   document.querySelector('.unmute-overlay').addEventListener('click', function () {
-    
+    window._wq = window._wq || [];
+    _wq.push({ id: "j9sfcygleh", onReady: function(video) {
+      video.unmute();
+      document.querySelector('.unmute-overlay').style.display = 'none';
+    }});
   });
 </script>
+</body>
+</html>
