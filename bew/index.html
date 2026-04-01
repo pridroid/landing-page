@@ -317,9 +317,9 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 <
 <div class="rs-cta">
-  <a href="#" class="rs-cta-btn payBtn">
-    Yes — I'm In. I'm Ready To 16X My Business →
-  </a>
+    <a href="javascript:void(0)" class="rs-cta-btn payBtn" onclick="goToPayment()">
+      Yes — I'm In. I'm Ready To 16X My Business →
+    </a>
   <p class="rs-cta-sub">
     04th April 2026 | Live On Zoom
   </p>
@@ -376,9 +376,9 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 
 <div class="rs-cta">
-  <a href="#" class="rs-cta-btn payBtn">
-    Yes — I'm In. I'm Ready To 16X My Business →
-  </a>
+    <a href="javascript:void(0)" class="rs-cta-btn payBtn" onclick="goToPayment()">
+      Yes — I'm In. I'm Ready To 16X My Business →
+    </a>
   <p class="rs-cta-sub">
     04th April 2026 | Live On Zoom
   </p>
@@ -468,7 +468,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <span class="fw-f-eq">=</span>
       <span class="fw-f-result">16X</span>
     </div>
-        <br>
+    <br>
     <div class="fw-examples">
       <div class="fw-example-row">
         <div class="fw-ex-currently">PUT YOUR CURRENTLY DOING</div>
@@ -509,9 +509,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <!-- CTA Button Section -->
 <div class="rs-cta">
-  <a href="#" class="rs-cta-btn payBtn">
-    Yes — I'm In. I'm Ready To 16X My Business →
-  </a>
+    <a href="javascript:void(0)" class="rs-cta-btn payBtn" onclick="goToPayment()">
+      Yes — I'm In. I'm Ready To 16X My Business →
+    </a>
   <p class="rs-cta-sub">
     04th April 2026 | Live On Zoom
   </p>
@@ -628,9 +628,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         <div class="rs-cta">
-          <a href="#" class="rs-cta-btn payBtn">
-            Yes — I'm In. I'm Ready To 16X My Business →
-          </a>
+            <a href="javascript:void(0)" class="rs-cta-btn payBtn" onclick="goToPayment()">
+              Yes — I'm In. I'm Ready To 16X My Business →
+            </a>
           <p class="rs-cta-sub">
             04th April 2026 | Live On Zoom
           </p>
@@ -763,9 +763,9 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 
   <div class="rs-cta">
-    <a href="#" class="rs-cta-btn payBtn">
-      Yes — I'm In. I'm Ready To 16X My Business →
-    </a>
+      <a href="javascript:void(0)" class="rs-cta-btn payBtn" onclick="goToPayment()">
+        Yes — I'm In. I'm Ready To 16X My Business →
+      </a>
     <p class="rs-cta-sub">
       04th April 2026 | Live On Zoom
     </p>
@@ -1005,29 +1005,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </div>
 
-<script>
-const params = new URLSearchParams(window.location.search);
 
-localStorage.setItem("utm_source", params.get("utm_source") || "");
-localStorage.setItem("utm_medium", params.get("utm_medium") || "");
-localStorage.setItem("utm_campaign", params.get("utm_campaign") || "");
-</script>
-
-
-<script>
-function goToPayment() {
-
-  // 🔥 Send UTM to GHL BEFORE payment (no delay)
-  navigator.sendBeacon("YOUR_GHL_WEBHOOK_URL", JSON.stringify({
-    utm_source: localStorage.getItem("utm_source"),
-    utm_medium: localStorage.getItem("utm_medium"),
-    utm_campaign: localStorage.getItem("utm_campaign")
-  }));
-
-  // 🚀 Redirect to Razorpay
-  window.location.href = "https://rzp.io/rzp/YOUR_LINK";
-}
-</script>
 
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
@@ -1162,24 +1140,38 @@ setTimeout(runAllCounters, 500);</script>
 </script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // This looks for every button with the class 'payBtn'
-    const payButtons = document.querySelectorAll('.payBtn');
+// ===============================
+// 🔹 STEP 1: CAPTURE UTM (AUTO)
+// ===============================
+(function () {
+  const params = new URLSearchParams(window.location.search);
 
-    payButtons.forEach(button => {
-      button.addEventListener('click', function(e) {
-        e.preventDefault();
+  if (params.get("utm_source")) {
+    localStorage.setItem("utm_source", params.get("utm_source"));
+    localStorage.setItem("utm_medium", params.get("utm_medium"));
+    localStorage.setItem("utm_campaign", params.get("utm_campaign"));
+  }
+})();
 
-        // Directly redirects the user to your Hosted Payment Page
-        window.location.href = "https://rzp.io/rzp/business-excellence-workshop";
-      });
-    });
-  });
+// ===============================
+// 🔹 STEP 2: BUTTON CLICK ACTION
+// ===============================
+function goToPayment() {
+
+  // 🔥 Send UTM to GHL (NO DELAY)
+  navigator.sendBeacon(
+    "https://services.leadconnectorhq.com/hooks/Cp2qTEuz547yz7f9m9AJ/webhook-trigger/06b3e56b-5450-4cfa-9b69-f5fd7d7e29fa",
+    JSON.stringify({
+      utm_source: localStorage.getItem("utm_source") || "",
+      utm_medium: localStorage.getItem("utm_medium") || "",
+      utm_campaign: localStorage.getItem("utm_campaign") || ""
+    })
+  );
+
+  // 🚀 Redirect to Razorpay
+  window.location.href = "https://rzp.io/rzp/business-excellence-workshop";
+}
 </script>
-
-
-
-
 
 <script>
 // =========================
