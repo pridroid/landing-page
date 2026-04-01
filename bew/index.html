@@ -1142,22 +1142,27 @@ setTimeout(runAllCounters, 500);</script>
 <script>
 function goToPayment() {
 
-  const data = {
-    utm_source: localStorage.getItem("utm_source"),
-    utm_medium: localStorage.getItem("utm_medium"),
-    utm_campaign: localStorage.getItem("utm_campaign")
-  };
+  const utm_source = localStorage.getItem("utm_source") || "";
+  const utm_medium = localStorage.getItem("utm_medium") || "";
+  const utm_campaign = localStorage.getItem("utm_campaign") || "";
 
-  console.log("Sending UTM:", data);
+  // 🔥 Send UTM using URL (100% reliable)
+  fetch("https://services.leadconnectorhq.com/hooks/Cp2qTEuz547yz7f9m9AJ/webhook-trigger/06b3e56b-5450-4cfa-9b69-f5fd7d7e29fa", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      utm_source,
+      utm_medium,
+      utm_campaign
+    })
+  });
 
-  navigator.sendBeacon(
-    "https://services.leadconnectorhq.com/hooks/Cp2qTEuz547yz7f9m9AJ/webhook-trigger/06b3e56b-5450-4cfa-9b69-f5fd7d7e29fa",
-    JSON.stringify(data)
-  );
-
+  // 🚀 Redirect after slight delay
   setTimeout(() => {
     window.location.href = "https://rzp.io/rzp/business-excellence-workshop";
-  }, 300); // small delay
+  }, 500);
 }
 </script>
 
