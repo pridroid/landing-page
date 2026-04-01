@@ -1140,36 +1140,24 @@ setTimeout(runAllCounters, 500);</script>
 </script>
 
 <script>
-// ===============================
-// 🔹 STEP 1: CAPTURE UTM (AUTO)
-// ===============================
-(function () {
-  const params = new URLSearchParams(window.location.search);
-
-  if (params.get("utm_source")) {
-    localStorage.setItem("utm_source", params.get("utm_source"));
-    localStorage.setItem("utm_medium", params.get("utm_medium"));
-    localStorage.setItem("utm_campaign", params.get("utm_campaign"));
-  }
-})();
-
-// ===============================
-// 🔹 STEP 2: BUTTON CLICK ACTION
-// ===============================
 function goToPayment() {
 
-  // 🔥 Send UTM to GHL (NO DELAY)
+  const data = {
+    utm_source: localStorage.getItem("utm_source"),
+    utm_medium: localStorage.getItem("utm_medium"),
+    utm_campaign: localStorage.getItem("utm_campaign")
+  };
+
+  console.log("Sending UTM:", data);
+
   navigator.sendBeacon(
     "https://services.leadconnectorhq.com/hooks/Cp2qTEuz547yz7f9m9AJ/webhook-trigger/06b3e56b-5450-4cfa-9b69-f5fd7d7e29fa",
-    JSON.stringify({
-      utm_source: localStorage.getItem("utm_source") || "",
-      utm_medium: localStorage.getItem("utm_medium") || "",
-      utm_campaign: localStorage.getItem("utm_campaign") || ""
-    })
+    JSON.stringify(data)
   );
 
-  // 🚀 Redirect to Razorpay
-  window.location.href = "https://rzp.io/rzp/business-excellence-workshop";
+  setTimeout(() => {
+    window.location.href = "https://rzp.io/rzp/business-excellence-workshop";
+  }, 300); // small delay
 }
 </script>
 
