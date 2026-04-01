@@ -1145,6 +1145,7 @@ function goToPayment() {
   const utm_source = localStorage.getItem("utm_source") || "";
   const utm_medium = localStorage.getItem("utm_medium") || "";
   const utm_campaign = localStorage.getItem("utm_campaign") || "";
+  const utm_name = localStorage.getItem("utm_name") || "";
 
   // 🔥 Send UTM using URL (100% reliable)
   fetch("https://services.leadconnectorhq.com/hooks/Cp2qTEuz547yz7f9m9AJ/webhook-trigger/06b3e56b-5450-4cfa-9b69-f5fd7d7e29fa", {
