@@ -468,7 +468,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <span class="fw-f-eq">=</span>
       <span class="fw-f-result">16X</span>
     </div>
-
+        <br>
     <div class="fw-examples">
       <div class="fw-example-row">
         <div class="fw-ex-currently">PUT YOUR CURRENTLY DOING</div>
@@ -864,9 +864,10 @@ document.addEventListener("DOMContentLoaded", function () {
           </p>
 
           <div class="rs-cta">
-            <a href="#" class="rs-cta-btn payBtn">
-              Yes — I'm In. I'm Ready To 16X My Business →
-            </a>
+              <a href="javascript:void(0)" class="rs-cta-btn payBtn" onclick="goToPayment()">
+                Yes — I'm In. I'm Ready To 16X My Business →
+              </a>
+            
             <p class="rs-cta-sub">
               04th April 2026 | Live On Zoom
             </p>
@@ -977,9 +978,9 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 
 <div class="rs-cta">
-  <a href="#" class="rs-cta-btn payBtn">
-    Yes — I'm In. I'm Ready To 16X My Business →
-  </a>
+    <a href="javascript:void(0)" class="rs-cta-btn payBtn" onclick="goToPayment()">
+      Yes — I'm In. I'm Ready To 16X My Business →
+    </a>
   <p class="rs-cta-sub">
     04th April 2026 | Live On Zoom
   </p>
@@ -997,7 +998,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </div>
 
-  <a href="#" class="rs-cta-btn payBtn">
+  <a href="javascript:void(0)" class="rs-cta-btn payBtn" onclick="goToPayment()">
     <span class="line1">BOOK YOUR SPOT</span>
     <span class="line2">NOW AT ₹99</span>
   </a>
@@ -1005,32 +1006,26 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 
 <script>
-// Capture UTMs
-function getUTM(param) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
-}
+const params = new URLSearchParams(window.location.search);
 
-localStorage.setItem("utm_source", getUTM("utm_source"));
-localStorage.setItem("utm_medium", getUTM("utm_medium"));
-localStorage.setItem("utm_campaign", getUTM("utm_campaign"));
+localStorage.setItem("utm_source", params.get("utm_source") || "");
+localStorage.setItem("utm_medium", params.get("utm_medium") || "");
+localStorage.setItem("utm_campaign", params.get("utm_campaign") || "");
+</script>
 
-// Send to GHL
-function sendToGHL(name, email, phone) {
-  fetch("https://services.leadconnectorhq.com/hooks/Cp2qTEuz547yz7f9m9AJ/webhook-trigger/06b3e56b-5450-4cfa-9b69-f5fd7d7e29fa", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      name: name,
-      email: email,
-      phone: phone,
-      utm_source: localStorage.getItem("utm_source"),
-      utm_medium: localStorage.getItem("utm_medium"),
-      utm_campaign: localStorage.getItem("utm_campaign")
-    })
-  });
+
+<script>
+function goToPayment() {
+
+  // 🔥 Send UTM to GHL BEFORE payment (no delay)
+  navigator.sendBeacon("YOUR_GHL_WEBHOOK_URL", JSON.stringify({
+    utm_source: localStorage.getItem("utm_source"),
+    utm_medium: localStorage.getItem("utm_medium"),
+    utm_campaign: localStorage.getItem("utm_campaign")
+  }));
+
+  // 🚀 Redirect to Razorpay
+  window.location.href = "https://rzp.io/rzp/YOUR_LINK";
 }
 </script>
 
