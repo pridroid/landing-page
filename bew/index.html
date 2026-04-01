@@ -54,28 +54,26 @@ src="https://www.facebook.com/tr?id=535586978926993&ev=PageView&noscript=1"
 </header>
 
 <script src="https://fast.wistia.com/player.js" async></script>
-<script src="https://fast.wistia.com/embed/k9pswa9i2g.js" async type="module"></script>
+<script src="https://fast.wistia.com/embed/c01znpuj04.js" async type="module"></script>
 
 <style>
-wistia-player[media-id='k9pswa9i2g']:not(:defined) {
-  background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/k9pswa9i2g/swatch');
+wistia-player[media-id='c01znpuj04']:not(:defined) {
+  background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/c01znpuj04/swatch');
   display: block;
   filter: blur(5px);
-  padding-top:56.25%;
+  padding-top: 56.25%;
 }
 </style>
 
 <div class="video-wrap">
   <div class="unmute-overlay">🔊 Tap to unmute</div>
-
   <wistia-player
-    media-id="k9pswa9i2g"
+    media-id="c01znpuj04"
     aspect="1.7777777777777777"
     autoplay="true"
     muted="true"
     loop
-  >
-  </wistia-player>
+  ></wistia-player>
 </div>
 
 <script>
@@ -84,11 +82,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const player = document.querySelector("wistia-player");
 
   overlay.addEventListener("click", function () {
-    if (player) {
-      player.muted = false;   // unmute
-      player.volume = 1;      // ensure volume
-      overlay.style.display = "none"; // hide overlay after click
-    }
+    player.muted = false;
+    player.volume = 1;
+    overlay.style.display = "none";
   });
 });
 </script>
@@ -310,12 +306,16 @@ document.addEventListener("DOMContentLoaded", function () {
   <div class="arrow-big">↓</div>
 
   <div class="stats-row">
-    <div class="stat-item"><div class="stat-num"><span class="counter" data-target="71">0</span>%</div><div class="stat-lbl">Average Drop in Customer Acquisition Cost</div></div>
-    <div class="stat-item"><div class="stat-num"><span class="counter" data-target="41">0</span>%</div><div class="stat-lbl">Cold Leads to Converted Calls.. Fully Automated</div></div>
-    <div class="stat-item"><div class="stat-num"><span class="counter" data-target="47">0</span></div><div class="stat-lbl">Manual Processes Elimnated Per Buisness</div></div>
-    <div class="stat-item"><div class="stat-num"><span class="counter" data-target="15">0</span>hrs</div><div class="stat-lbl">Less Work Per Week. More Revenue Per Day</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="counter" data-target="71" data-suffix="%">0%</span></div>
+        <div class="stat-lbl">Average Drop in Customer Acquisition Cost</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="counter" data-target="41" data-suffix="%">0%</span></div>
+        <div class="stat-lbl">Cold Leads to Converted Calls.. Fully Automated</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="counter" data-target="47" data-suffix="">0</span></div>
+        <div class="stat-lbl">Manual Processes Elimnated Per Buisness</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="counter" data-target="15" data-suffix="hrs">0hrs</span></div>
+        <div class="stat-lbl">Less Work Per Week. More Revenue Per Day</div></div>
   </div>
-</div>
+<
 <div class="rs-cta">
   <a href="#" class="rs-cta-btn payBtn">
     Yes — I'm In. I'm Ready To 16X My Business →
@@ -406,8 +406,9 @@ document.addEventListener("DOMContentLoaded", function () {
       <h3 class="fw-step-title">Double Your Leads</h3>
       <p class="fw-step-desc">Systems that attract your ideal clients 24/7... magnetic content, self-optimising campaigns, and a presence that works while you sleep. More qualified leads. Less effort to get them.</p>
     </div>
-    <div class="fw-result-bar">Result: Your Business × 2</div>
-  </div>
+    <div class="fw-result-bar">
+      Result: Your Business × <span class="fw-result-num" data-target="4">0</span>
+    </div>
 
   <!-- Step 2: 4x -->
   <div class="fw-step">
@@ -1002,6 +1003,38 @@ document.addEventListener("DOMContentLoaded", function () {
   </a>
 
 </div>
+
+<script>
+// Capture UTMs
+function getUTM(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+localStorage.setItem("utm_source", getUTM("utm_source"));
+localStorage.setItem("utm_medium", getUTM("utm_medium"));
+localStorage.setItem("utm_campaign", getUTM("utm_campaign"));
+
+// Send to GHL
+function sendToGHL(name, email, phone) {
+  fetch("https://services.leadconnectorhq.com/hooks/Cp2qTEuz547yz7f9m9AJ/webhook-trigger/06b3e56b-5450-4cfa-9b69-f5fd7d7e29fa", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      phone: phone,
+      utm_source: localStorage.getItem("utm_source"),
+      utm_medium: localStorage.getItem("utm_medium"),
+      utm_campaign: localStorage.getItem("utm_campaign")
+    })
+  });
+}
+</script>
+
+
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function faqToggle(btn) {
   const item = btn.closest('.faq-item');
@@ -1151,67 +1184,102 @@ setTimeout(runAllCounters, 500);</script>
 
 
 
-<script>
-  const unmuteOverlay = document.querySelector('.unmute-overlay');
-  if(unmuteOverlay) {
-      unmuteOverlay.addEventListener('click', function () {
-        window._wq = window._wq || [];
-        _wq.push({ id: "j9sfcygleh", onReady: function(video) {
-          video.unmute();
-          unmuteOverlay.style.display = 'none';
-        }});
-      });
-  }
-</script>
-
 
 
 <script>
-  document.querySelector('.unmute-overlay').addEventListener('click', function () {
-    window._wq = window._wq || [];
-    _wq.push({ id: "j9sfcygleh", onReady: function(video) {
-      video.unmute();
-      document.querySelector('.unmute-overlay').style.display = 'none';
-    }});
-  });
-</script>
+// =========================
+// UNIFIED COUNTER SCRIPT
+// Triggers EVERY TIME element scrolls into view
+// Resets to 0 when scrolled out so it replays on return
+// =========================
 
-<script>
-const counters = document.querySelectorAll('.counter');
+function animateCounter(el, target, suffix) {
+  // Cancel any in-progress animation on this element
+  if (el._rafId) cancelAnimationFrame(el._rafId);
 
-const speed = 200; // lower = faster
+  let count = 0;
+  const duration = 1500; // ms
+  const startTime = performance.now();
 
-const animateCounter = (counter) => {
-  const target = +counter.getAttribute('data-target');
-  const updateCount = () => {
-    const count = +counter.innerText;
-    const increment = target / speed;
+  function update(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    // Ease-out cubic
+    const eased = 1 - Math.pow(1 - progress, 3);
+    count = Math.ceil(eased * target);
+    el.innerText = count + suffix;
 
-    if (count < target) {
-      counter.innerText = Math.ceil(count + increment);
-      setTimeout(updateCount, 20);
+    if (progress < 1) {
+      el._rafId = requestAnimationFrame(update);
     } else {
-      counter.innerText = target;
+      el.innerText = target + suffix;
+      el._rafId = null;
     }
-  };
-  updateCount();
-};
+  }
 
-// Trigger only when visible
-const observer = new IntersectionObserver(entries => {
+  el._rafId = requestAnimationFrame(update);
+}
+
+function getSuffix(el) {
+  return el.dataset.suffix !== undefined ? el.dataset.suffix : "";
+}
+
+// Use a single observer that watches entries for BOTH enter & exit
+const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
+    const el = entry.target;
+
     if (entry.isIntersecting) {
-      animateCounter(entry.target);
-      observer.unobserve(entry.target); // run only once
+      // Element scrolled INTO view — animate from 0
+      if (el.classList.contains("counter")) {
+        const target = +el.dataset.target;
+        animateCounter(el, target, getSuffix(el));
+      }
+      if (el.classList.contains("fw-mult-num")) {
+        const target = parseInt(el.dataset.target) || parseInt(el.innerText);
+        animateCounter(el, target, "x");
+      }
+      if (el.classList.contains("fw-result-num")) {
+        const target = +el.dataset.target;
+        animateCounter(el, target, "");
+      }
+    } else {
+      // Element scrolled OUT of view — reset to 0 so it replays next time
+      if (el._rafId) { cancelAnimationFrame(el._rafId); el._rafId = null; }
+      if (el.classList.contains("counter")) {
+        el.innerText = "0";
+      }
+      if (el.classList.contains("fw-mult-num")) {
+        const target = parseInt(el.dataset.target) || 2;
+        el.innerText = "0x";
+      }
+      if (el.classList.contains("fw-result-num")) {
+        el.innerText = "0";
+      }
     }
   });
 }, {
-  threshold: 0.5
+  threshold: 0.4
 });
 
-counters.forEach(counter => {
-  observer.observe(counter);
-});
+// Attach to all counter elements once DOM is ready
+function attachCounterObservers() {
+  document.querySelectorAll(".counter").forEach(el => counterObserver.observe(el));
+  document.querySelectorAll(".fw-mult-num").forEach(el => {
+    // Store original target from text (e.g. "2x" → 2)
+    if (!el.dataset.target) {
+      el.dataset.target = parseInt(el.innerText) || 2;
+    }
+    counterObserver.observe(el);
+  });
+  document.querySelectorAll(".fw-result-num").forEach(el => counterObserver.observe(el));
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", attachCounterObservers);
+} else {
+  attachCounterObservers();
+}
 </script>
 
 </body>
