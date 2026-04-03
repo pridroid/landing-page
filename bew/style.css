@@ -51,13 +51,35 @@ body {
     justify-content: center;
 }
 
-/* image styling */
-.header-img {
-    width: 100%;
-    max-width: 900px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+.top-bar {
+  display: inline-block;              /* key for capsule shape */
+  background: var(--white);
+  color: var(--balck);
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  padding: 10px 24px;
+  border: 3px solid var(--black);
+  border-radius: 999px;   
+  margin-top: 8px;
+  margin-left: 8px;   
+  width: fit-content;   
+  
+}
+/* wrapper to center it */
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  text-align: center; 
+}
+
+.head-highlight {
+    color: var(--red);
 }
 
 /* MOBILE OPTIMIZATION */
@@ -162,29 +184,40 @@ body {
     margin-bottom: 0;
     padding-bottom: 10px;
 }
-.warn-word {
+/*.warn-word {
     font-family: Oxanium;
     font-size: clamp(60px, 15vw, 120px);
     font-weight: 900;
     color: var(--green);
     line-height: 1;
-}
+}*/
 .warn-headline {
-    font-size: clamp(18px, 8vw, 25px);
-    font-weight: 700;
-    margin: 15px 0;
-    font-family: "Barlow Condensed";
+    font-family:
+        "Michroma", sans-serif; /* The wide, modern font from your image */
+    font-size: clamp(
+        35px,
+        8vw,
+        58px
+    ); /* Wide fonts take up more horizontal space, so we scale size carefully */
+    font-weight: 800; /* Michroma is naturally bold */
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    text-transform: none;
+    /* This adds the 'wide' feeling if the font isn't wide enough */
+    transform: scaleX(1.1);
+    display: block;
 }
 .warn-highlight {
     color: #007bff;
 }
 .warn-italic {
-    font-style: italic;
+    font-size: 28px;
     color: var(--black);
-    margin-bottom: 15px;
+    margin-bottom: 16px;
     display: block;
-    font-family: "Barlow Condensed";
-    font-weight: 700;
+    font-family: "Arial";
+    font-weight: 1;
 }
 .warn-read-btn {
     display: inline-block;
@@ -314,6 +347,8 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     padding-top: 0;
+    margin-bottom: 0;
+    margin-top: 10px;
 }
 .sec-label {
     font-size: 11px;
@@ -1059,6 +1094,7 @@ body {
     background: var(--white);
     margin-bottom: 0;
     padding-bottom: 10px;
+    margin-top: 5px;
 }
 
 /* Subheader (Red Pill) */
