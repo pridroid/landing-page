@@ -857,7 +857,7 @@ body {
     
     font-family: "Michroma", sans-serif; /* SAME font */
     font-size: clamp(40px, 8vw, 68px); /* SAME size */
-    font-weight: 800; /* SAME weight */
+    font-weight: 800; 
     color: var(--green);
     line-height: 1;
     letter-spacing: -1px;
@@ -1004,21 +1004,20 @@ body {
   gap: 4px;
 }
 
-/* BUTTON */
 .rs-cta-btn {
-  display: flex;
-  flex-direction: column;   /* 🔥 forces 2 lines */
-  align-items: center;
-  justify-content: center;
+  display: block;                /* ✅ remove flex */
+  width: 100%;                  /* full width = premium look */
+  max-width: 600px;             /* control size */
+  margin: 0 auto;
+  font-size: 38px;              /* balanced size */
+  font-weight: 800;
+  line-height: 1.4;
+  padding: 6px 12px;           /* 🔥 proper spacing */
+  border-radius: 14px;
+  text-align: center;
+  text-decoration: none;
   background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: #fff;
-  padding: 4px 12px;
-  line-height: 1; 
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 700;
-  min-width: 150px;        /* 🔥 IMPORTANT: prevents squeezing */
-  text-align: center;
 }
 
 /* FORCE each line */
@@ -1049,6 +1048,7 @@ body {
 
   .rs-cta-btn {
     min-width: 120px;
+    font-size: 30px;
     padding: 7px 14px;
   }
 }
