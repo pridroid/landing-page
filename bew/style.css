@@ -614,11 +614,12 @@ wistia-player {
 }
 .coach-photo-col {
     flex: 0 0 280px;
-    max-width: 280px;
+    max-width: 310px;
     text-align: center;
     align-self: flex-start;
 }
-.coach-img-box { width: 100%; aspect-ratio: 4/5; background: var(--dark); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 60px; overflow: hidden; position: relative; } .coach-img-box img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;
+.coach-img-box { width: 100%; aspect-ratio: 4/5; background: var(--dark); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 60px; overflow: hidden; position: relative; } 
+.coach-img-box img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;
 }
 .coach-name {
     font-family: "Barlow Condensed";
