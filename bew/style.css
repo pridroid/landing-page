@@ -33,7 +33,7 @@ body {
 
 /* HEADER FIX */
 .header {
-    background: #0f172a; /* your required color */
+    background: var(--white); /* your required color */
     padding: 0;
     display: flex;
     justify-content: center;
@@ -56,8 +56,8 @@ body {
   background: var(--white);
   color: var(--balck);
   text-align: center;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-top: 5px;
@@ -65,7 +65,9 @@ body {
   border: 3px solid var(--black);
   border-radius: 999px;   
   margin-top: 8px;
-  margin-left: 8px;   
+  margin-left: auto;   /* ✅ center fix */
+  margin-right: auto;  /* ✅ center fix */
+  width: fit-content;  
   width: fit-content;   
   
 }
@@ -252,22 +254,25 @@ body {
     display: inline-block;
 }
 
-/* New Image Section */
-.image-showcase {
-    text-align: center;
-    padding: 60px 20px;
-    background: var(--white);
+.event-box {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 25px 20px;
+
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  
+  border: 2px solid rgba(255, 49, 48, 0.2);
+  text-align: center;
 }
-.showcase-inner {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-.workshop-photo {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+.event-details {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 20px;
+  line-height: 1.6;
 }
 /*--what happens when you join --*/
 .change-cards-grid {
@@ -1094,7 +1099,7 @@ body {
     background: var(--white);
     margin-bottom: 0;
     padding-bottom: 10px;
-    margin-top: 5px;
+    padding-top: 5px;
 }
 
 /* Subheader (Red Pill) */
@@ -1113,6 +1118,7 @@ body {
     letter-spacing: 3px;
     margin-bottom: 40px;
     animation: floatPulse 3s ease-in-out infinite;
+    
 }
 
 @keyframes floatPulse {
